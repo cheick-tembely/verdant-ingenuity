@@ -1,54 +1,90 @@
-import { Building2, Calendar, Users, Award } from "lucide-react";
+import { Building2, Calendar, Users, Award, ArrowRight } from "lucide-react";
 import aboutImg from "@/assets/about-img.jpg";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
-  { icon: Calendar, value: "2013", label: "Année de création" },
-  { icon: Users, value: "17+", label: "Experts qualifiés" },
-  { icon: Building2, value: "16+", label: "Projets majeurs" },
-  { icon: Award, value: "9", label: "Partenaires" },
+  { icon: Calendar, value: "2013", label: "Année de création", color: "from-primary to-green-medium" },
+  { icon: Users, value: "17+", label: "Experts qualifiés", color: "from-green-medium to-secondary" },
+  { icon: Building2, value: "16+", label: "Projets majeurs", color: "from-secondary to-green-lime" },
+  { icon: Award, value: "9", label: "Partenaires internationaux", color: "from-green-lime to-accent" },
 ];
 
 const AboutSection = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   return (
-    <section id="apropos" className="section-padding bg-background">
-      <div className="container mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <span className="text-secondary font-semibold text-sm uppercase tracking-wider">À propos</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-              Un bureau d'études au cœur du <span className="text-gradient">développement</span>
+    <section id="apropos" className="section-padding bg-background relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-green-pale rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      
+      <div ref={ref} className="container mx-auto relative">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className={`reveal-left ${isVisible ? "visible" : ""}`}>
+            <span className="inline-flex items-center gap-2 bg-green-pale text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              À propos d'ICRED Mali
+            </span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground mt-2 mb-6 leading-tight">
+              Un bureau d'études au cœur du{" "}
+              <span className="text-gradient">développement</span>
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
+            <p className="text-muted-foreground leading-relaxed mb-4 text-lg">
               Ingénierie Conseil et de Recherche pour le Développement (ICRED-SARL) est une société de droit malien créée en juin 2013, en tant que bureau d'étude d'ingénieurs conseils.
             </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              La société jouit d'une solide expérience dans divers domaines tels que l'énergie, l'adduction d'eau potable, l'aménagement urbain, les routes, le bâtiment et les études d'impact environnemental. ICRED Mali entretient de bonnes relations de partenariat avec de grandes sociétés nationales et internationales.
+            <p className="text-muted-foreground leading-relaxed mb-8">
+              La société jouit d'une solide expérience dans divers domaines tels que l'énergie, l'adduction d'eau potable, l'aménagement urbain, les routes, le bâtiment et les études d'impact environnemental.
             </p>
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat) => (
-                <div key={stat.label} className="bg-green-pale rounded-xl p-4 text-center">
-                  <stat.icon className="mx-auto mb-2 text-primary" size={24} />
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </div>
+            <a
+              href="#services"
+              className="group inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+            >
+              Nos domaines d'expertise
+              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
 
-          <div className="relative">
-            <img
-              src={aboutImg}
-              alt="Ingénieurs ICRED sur le terrain"
-              className="rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
-              loading="lazy"
-              width={800}
-              height={600}
-            />
-            <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground rounded-xl p-5 shadow-lg">
-              <div className="text-3xl font-bold">12+</div>
-              <div className="text-sm text-primary-foreground/80">Années d'expérience</div>
+          <div className={`relative reveal-right ${isVisible ? "visible" : ""}`}>
+            <div className="relative">
+              <img
+                src={aboutImg}
+                alt="Ingénieurs ICRED sur le terrain"
+                className="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]"
+                loading="lazy"
+                width={800}
+                height={600}
+              />
+              {/* Overlay gradient */}
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-primary/20 to-transparent" />
             </div>
+            
+            {/* Floating stat card */}
+            <div className="absolute -bottom-8 -left-8 glass rounded-2xl p-6 shadow-xl border border-border/50" style={{ animation: "pulse-glow 3s ease-in-out infinite" }}>
+              <div className="text-4xl font-bold text-gradient">12+</div>
+              <div className="text-sm text-muted-foreground font-medium">Années d'expérience</div>
+            </div>
+            
+            {/* Decorative ring */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-secondary/30 rounded-full" />
           </div>
+        </div>
+
+        {/* Stats */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-20">
+          {stats.map((stat, i) => (
+            <div
+              key={stat.label}
+              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${i + 3} group relative bg-card rounded-2xl p-6 text-center border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-500 overflow-hidden`}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-green-pale/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative">
+                <div className={`w-14 h-14 mx-auto rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <stat.icon className="text-primary-foreground" size={24} />
+                </div>
+                <div className="text-3xl font-bold text-foreground mb-1">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
