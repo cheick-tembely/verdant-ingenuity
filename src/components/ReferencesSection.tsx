@@ -39,7 +39,7 @@ const ReferencesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12 lg:mb-20">
           <div className={`space-y-3 reveal-left ${isVisible ? "visible" : ""}`}>
             {references.map((ref, i) => (
               <div
