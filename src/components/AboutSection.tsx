@@ -58,13 +58,13 @@ const AboutSection = () => {
             </div>
             
             {/* Floating stat card */}
-            <div className="absolute -bottom-8 -left-8 glass rounded-2xl p-6 shadow-xl border border-border/50" style={{ animation: "pulse-glow 3s ease-in-out infinite" }}>
-              <div className="text-4xl font-bold text-gradient">12+</div>
-              <div className="text-sm text-muted-foreground font-medium">Années d'expérience</div>
+            <div className="absolute -bottom-4 left-4 md:-bottom-8 md:-left-8 glass rounded-2xl p-4 md:p-6 shadow-xl border border-border/50" style={{ animation: "pulse-glow 3s ease-in-out infinite" }}>
+              <div className="text-3xl md:text-4xl font-bold text-gradient">12+</div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">Années d'expérience</div>
             </div>
             
             {/* Decorative ring */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-secondary/30 rounded-full" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-secondary/30 rounded-full hidden md:block" />
           </div>
         </div>
 
