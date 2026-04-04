@@ -8,7 +8,7 @@ const Footer = () => {
       
       <div className="container mx-auto px-4 py-16 relative">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <img src={logo} alt="ICRED Mali" className="h-14 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
               Ingénierie Conseil et de Recherche pour le Développement. Rendre accessibles les services de l'Ingénieur Conseil aux populations.

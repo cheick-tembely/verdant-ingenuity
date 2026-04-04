@@ -76,7 +76,7 @@ const HeroSection = () => {
 
           {/* Trust badges */}
           <div
-            className="mt-16 flex flex-wrap items-center justify-center gap-8 text-primary-foreground/50 text-sm animate-fade-in"
+            className="mt-10 md:mt-16 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-primary-foreground/50 text-xs md:text-sm animate-fade-in"
             style={{ animationDelay: "1s", animationFillMode: "both" }}
           >
             <div className="flex items-center gap-2">

@@ -42,7 +42,7 @@ const ServicesSection = () => {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 10)} group bg-card rounded-2xl p-6 hover:shadow-xl transition-all duration-500 border border-border hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden cursor-pointer`}
+              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 10)} group bg-card rounded-xl md:rounded-2xl p-4 md:p-6 hover:shadow-xl transition-all duration-500 border border-border hover:border-primary/20 hover:-translate-y-2 relative overflow-hidden cursor-pointer`}
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-pale/0 to-green-pale/0 group-hover:from-green-pale/60 group-hover:to-transparent transition-all duration-500" />

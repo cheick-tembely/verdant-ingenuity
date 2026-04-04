@@ -56,7 +56,7 @@ const ReferencesSection = () => {
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed mt-1">{ref.desc}</p>
                 </div>
-                <ArrowUpRight size={16} className="text-muted-foreground/0 group-hover:text-primary transition-all shrink-0 mt-1" />
+                <ArrowUpRight size={16} className="text-muted-foreground/0 group-hover:text-primary transition-all shrink-0 mt-1 hidden sm:block" />
               </div>
             ))}
           </div>
