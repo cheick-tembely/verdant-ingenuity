@@ -49,7 +49,7 @@ const ServicesSection = () => {
               
               <div className="relative">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 bg-green-pale group-hover:bg-gradient-to-br group-hover:${service.accent} transition-all duration-300 group-hover:shadow-lg`}>
-                  <service.icon size={22} className="text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  <service.icon size={22} className="text-primary group-hover:text-foreground transition-colors duration-300" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2 text-sm group-hover:text-primary transition-colors">{service.title}</h3>
                 <p className="text-muted-foreground text-xs leading-relaxed">{service.desc}</p>
