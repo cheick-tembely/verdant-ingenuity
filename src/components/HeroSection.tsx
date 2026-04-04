@@ -33,7 +33,7 @@ const HeroSection = () => {
           </span>
           
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-8 animate-fade-in"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 md:mb-8 animate-fade-in"
             style={{ animationDelay: "0.4s", animationFillMode: "both" }}
           >
             Ingénierie au service
