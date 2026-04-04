@@ -44,7 +44,7 @@ const ReferencesSection = () => {
             {references.map((ref, i) => (
               <div
                 key={i}
-                className="group flex gap-4 items-start bg-card rounded-xl p-5 border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="group flex gap-3 md:gap-4 items-start bg-card rounded-xl p-4 md:p-5 border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-lg bg-green-pale flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
                   <CheckCircle2 className="text-primary group-hover:text-primary-foreground transition-colors" size={18} />
