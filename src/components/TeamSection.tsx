@@ -35,7 +35,7 @@ const TeamSection = () => {
           {experts.map((expert, i) => (
             <div
               key={expert.name}
-              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 8)} group bg-card rounded-2xl p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden`}
+              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 8)} group bg-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden`}
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               
