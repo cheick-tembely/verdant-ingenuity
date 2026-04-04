@@ -97,7 +97,7 @@ const HeroSection = () => {
 
       <a
         href="#apropos"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40 hover:text-primary-foreground transition-all duration-300 hover:scale-110"
+        className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40 hover:text-primary-foreground transition-all duration-300 hover:scale-110 hidden md:block"
         style={{ animation: "float 2s ease-in-out infinite" }}
       >
         <div className="w-8 h-12 rounded-full border-2 border-current flex items-start justify-center pt-2">
