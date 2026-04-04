@@ -29,7 +29,7 @@ const Navbar = () => {
           : "bg-transparent py-2"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between h-20 px-4">
+      <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-4">
         <a href="#accueil" className="flex items-center gap-2 group">
           <img
             src={logo}

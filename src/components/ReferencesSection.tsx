@@ -39,12 +39,12 @@ const ReferencesSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12 lg:mb-20">
           <div className={`space-y-3 reveal-left ${isVisible ? "visible" : ""}`}>
             {references.map((ref, i) => (
               <div
                 key={i}
-                className="group flex gap-4 items-start bg-card rounded-xl p-5 border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                className="group flex gap-3 md:gap-4 items-start bg-card rounded-xl p-4 md:p-5 border border-border hover:border-primary/20 hover:shadow-lg transition-all duration-300 cursor-pointer"
               >
                 <div className="w-10 h-10 rounded-lg bg-green-pale flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
                   <CheckCircle2 className="text-primary group-hover:text-primary-foreground transition-colors" size={18} />
@@ -56,7 +56,7 @@ const ReferencesSection = () => {
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed mt-1">{ref.desc}</p>
                 </div>
-                <ArrowUpRight size={16} className="text-muted-foreground/0 group-hover:text-primary transition-all shrink-0 mt-1" />
+                <ArrowUpRight size={16} className="text-muted-foreground/0 group-hover:text-primary transition-all shrink-0 mt-1 hidden sm:block" />
               </div>
             ))}
           </div>

@@ -33,7 +33,7 @@ const HeroSection = () => {
           </span>
           
           <h1
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-8 animate-fade-in"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 md:mb-8 animate-fade-in"
             style={{ animationDelay: "0.4s", animationFillMode: "both" }}
           >
             Ingénierie au service
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </h1>
           
           <p
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in"
+            className="text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed animate-fade-in px-2"
             style={{ animationDelay: "0.6s", animationFillMode: "both" }}
           >
             Notre mission, rendre accessibles les services de l'Ingénieur Conseil aux populations. ICRED Mali accompagne le développement durable au Mali et en Afrique.
@@ -76,7 +76,7 @@ const HeroSection = () => {
 
           {/* Trust badges */}
           <div
-            className="mt-16 flex flex-wrap items-center justify-center gap-8 text-primary-foreground/50 text-sm animate-fade-in"
+            className="mt-10 md:mt-16 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-primary-foreground/50 text-xs md:text-sm animate-fade-in"
             style={{ animationDelay: "1s", animationFillMode: "both" }}
           >
             <div className="flex items-center gap-2">

@@ -18,7 +18,7 @@ const AboutSection = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-green-pale rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
       <div ref={ref} className="container mx-auto relative">
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-center">
           <div className={`reveal-left ${isVisible ? "visible" : ""}`}>
             <span className="inline-flex items-center gap-2 bg-green-pale text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-6">
               <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
@@ -58,13 +58,13 @@ const AboutSection = () => {
             </div>
             
             {/* Floating stat card */}
-            <div className="absolute -bottom-8 -left-8 glass rounded-2xl p-6 shadow-xl border border-border/50" style={{ animation: "pulse-glow 3s ease-in-out infinite" }}>
-              <div className="text-4xl font-bold text-gradient">12+</div>
-              <div className="text-sm text-muted-foreground font-medium">Années d'expérience</div>
+            <div className="absolute -bottom-4 left-4 md:-bottom-8 md:-left-8 glass rounded-2xl p-4 md:p-6 shadow-xl border border-border/50" style={{ animation: "pulse-glow 3s ease-in-out infinite" }}>
+              <div className="text-3xl md:text-4xl font-bold text-gradient">12+</div>
+              <div className="text-xs md:text-sm text-muted-foreground font-medium">Années d'expérience</div>
             </div>
             
             {/* Decorative ring */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-secondary/30 rounded-full" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-4 border-secondary/30 rounded-full hidden md:block" />
           </div>
         </div>
 

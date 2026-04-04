@@ -31,18 +31,18 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
           {experts.map((expert, i) => (
             <div
               key={expert.name}
-              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 8)} group bg-card rounded-2xl p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden`}
+              className={`reveal-scale ${isVisible ? "visible" : ""} stagger-${Math.min(i + 1, 8)} group bg-card rounded-xl md:rounded-2xl p-4 md:p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden`}
             >
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               
-              <div className="w-16 h-16 rounded-2xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-lg mb-5 group-hover:scale-110 group-hover:rounded-xl transition-all duration-300 shadow-lg">
+              <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-gradient-primary flex items-center justify-center text-primary-foreground font-bold text-sm md:text-lg mb-3 md:mb-5 group-hover:scale-110 group-hover:rounded-xl transition-all duration-300 shadow-lg">
                 {expert.name.split(" ").map((n) => n[0]).join("").slice(0, 2)}
               </div>
-              <h3 className="font-semibold text-foreground text-sm group-hover:text-primary transition-colors">{expert.name}</h3>
+              <h3 className="font-semibold text-foreground text-xs md:text-sm group-hover:text-primary transition-colors leading-tight">{expert.name}</h3>
               <p className="text-xs text-secondary font-semibold mb-1">{expert.role}</p>
               <p className="text-xs text-muted-foreground mb-4">{expert.profile}</p>
               <div className="flex items-center gap-2">
