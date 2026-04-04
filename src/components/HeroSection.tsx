@@ -48,7 +48,7 @@ const HeroSection = () => {
           </h1>
           
           <p
-            className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-12 leading-relaxed animate-fade-in"
+            className="text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed animate-fade-in px-2"
             style={{ animationDelay: "0.6s", animationFillMode: "both" }}
           >
             Notre mission, rendre accessibles les services de l'Ingénieur Conseil aux populations. ICRED Mali accompagne le développement durable au Mali et en Afrique.
