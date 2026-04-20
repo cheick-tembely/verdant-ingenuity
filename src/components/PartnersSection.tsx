@@ -1,22 +1,26 @@
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import egis from "@/assets/partners/egis.png";
-import fluvial from "@/assets/partners/fluvial.png";
-import sertas from "@/assets/partners/sertas.png";
-import betico from "@/assets/partners/betico.png";
-import sid from "@/assets/partners/sid.png";
-import ted from "@/assets/partners/ted.png";
+import anict from "@/assets/partners/anict.png";
+import apej from "@/assets/partners/apej.png";
+import b2gold from "@/assets/partners/b2gold.jpg";
+import bdk from "@/assets/partners/bdk.png";
+import fgsp from "@/assets/partners/fgsp.jpg";
+import helvetas from "@/assets/partners/helvetas.png";
 import huawei from "@/assets/partners/huawei.png";
-import adg from "@/assets/partners/adg.png";
+import edm from "@/assets/partners/edm.png";
+import amrtp from "@/assets/partners/amrtp.png";
+import oit from "@/assets/partners/oit.png";
 
 const partners = [
-  { name: "EGIS International", logo: egis },
-  { name: "Fluvial Conseil", logo: fluvial },
-  { name: "SERTAS Mali", logo: sertas },
-  { name: "BETICO Mali", logo: betico },
-  { name: "SID Ingénierie", logo: sid },
-  { name: "TED", logo: ted },
-  { name: "Huawei Mali", logo: huawei },
-  { name: "ADG Valve", logo: adg },
+  { name: "ANICT", logo: anict },
+  { name: "APEJ", logo: apej },
+  { name: "B2Gold - Fekola", logo: b2gold },
+  { name: "Groupe BDK", logo: bdk },
+  { name: "FGSP S.A", logo: fgsp },
+  { name: "HELVETAS Mali", logo: helvetas },
+  { name: "Huawei", logo: huawei },
+  { name: "EDM S.A", logo: edm },
+  { name: "AMRTP", logo: amrtp },
+  { name: "OIT", logo: oit },
 ];
 
 const PartnersSection = () => {
@@ -37,7 +41,7 @@ const PartnersSection = () => {
             Ils nous font <span className="text-gradient">confiance</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Nous collaborons avec des acteurs majeurs de l'ingénierie et de la technologie au Mali et à l'international.
+            Nous collaborons avec des acteurs majeurs de l'ingénierie, des institutions et de la technologie au Mali et à l'international.
           </p>
         </div>
 
@@ -47,7 +51,7 @@ const PartnersSection = () => {
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-card to-transparent z-10" />
 
           <div className="overflow-hidden">
-            <div className="flex gap-6 md:gap-8 animate-marquee w-max">
+            <div className="flex gap-6 md:gap-8 animate-marquee w-max hover:[animation-play-state:paused]">
               {loop.map((partner, i) => (
                 <div
                   key={`${partner.name}-${i}`}
@@ -57,13 +61,13 @@ const PartnersSection = () => {
                     <img
                       src={partner.logo}
                       alt={`Logo ${partner.name}`}
-                      className="max-h-full max-w-full object-contain grayscale group-hover:grayscale-0 transition-all duration-500"
+                      className="max-h-full max-w-full object-contain"
                       loading="lazy"
                       width={512}
                       height={512}
                     />
                   </div>
-                  <p className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors">
+                  <p className="text-sm font-semibold text-foreground/80 group-hover:text-primary transition-colors text-center">
                     {partner.name}
                   </p>
                 </div>
