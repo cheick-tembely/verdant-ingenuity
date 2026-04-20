@@ -13,12 +13,6 @@ const references = [
   { title: "Piste Dialakoroba-Kourouba", desc: "Études hydrologiques et hydrauliques sur 65 km pour PDI-BS", tag: "Hydraulique" },
 ];
 
-const partners = [
-  "EGIS International", "Fluvial Conseil", "SERTAS Mali",
-  "BETICO Mali", "SID Ingénierie", "TED",
-  "Huawei Mali", "ADG Valve",
-];
-
 const ReferencesSection = () => {
   const { ref, isVisible } = useScrollReveal();
 
@@ -61,7 +55,7 @@ const ReferencesSection = () => {
             ))}
           </div>
           
-          <div className={`space-y-8 reveal-right ${isVisible ? "visible" : ""}`}>
+          <div className={`reveal-right ${isVisible ? "visible" : ""} lg:sticky lg:top-24`}>
             <div className="relative group">
               <img
                 src={energyImg}
@@ -76,21 +70,6 @@ const ReferencesSection = () => {
                 <div className="glass rounded-xl px-5 py-3 border border-primary-foreground/10">
                   <p className="text-foreground text-sm font-semibold">+16 projets majeurs réalisés</p>
                   <p className="text-muted-foreground text-xs">au Mali et en Afrique de l'Ouest</p>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-gradient-dark rounded-3xl p-8 text-primary-foreground relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/10 rounded-full blur-2xl" />
-              <div className="relative">
-                <h3 className="text-xl font-bold mb-6">Partenaires de confiance</h3>
-                <div className="grid grid-cols-2 gap-4">
-                  {partners.map((partner) => (
-                    <div key={partner} className="flex items-center gap-3 text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors group/p cursor-pointer">
-                      <div className="w-2 h-2 rounded-full bg-green-lime group-hover/p:scale-150 transition-transform" />
-                      {partner}
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>
