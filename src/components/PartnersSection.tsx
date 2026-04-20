@@ -37,10 +37,7 @@ const PartnersSection = () => {
   const loopB = [...rowBSafe, ...rowBSafe, ...rowBSafe];
 
   return (
-    <section id="partenaires" className="section-padding bg-card relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute top-0 left-1/2 w-[40rem] h-[40rem] bg-green-pale/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/3" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-light/20 rounded-full blur-3xl" />
+    <section id="partenaires" className="section-padding bg-background relative overflow-hidden">
 
       <div ref={ref} className="container mx-auto relative">
         <div className={`text-center mb-14 reveal ${isVisible ? "visible" : ""}`}>
@@ -72,8 +69,8 @@ const PartnersSection = () => {
 
         <div className={`relative space-y-6 reveal ${isVisible ? "visible" : ""}`}>
           {/* Fade edges */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-card to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-card to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-background to-transparent z-10" />
 
           {/* Row 1 - left */}
           <div className="overflow-hidden">
