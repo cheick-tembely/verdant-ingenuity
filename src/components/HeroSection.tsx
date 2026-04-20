@@ -3,90 +3,94 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="accueil"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8"
+    >
+      {/* Background */}
       <img
         src={heroBg}
         alt="Infrastructure et développement au Mali"
         className="absolute inset-0 w-full h-full object-cover scale-105"
-        width={1920}
-        height={1080}
       />
-      <div className="absolute inset-0 bg-gradient-hero" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-lime/10 rounded-full blur-3xl" />
-      
-      {/* Grid pattern overlay */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: "linear-gradient(hsl(0 0% 100%) 1px, transparent 1px), linear-gradient(90deg, hsl(0 0% 100%) 1px, transparent 1px)",
-        backgroundSize: "60px 60px"
-      }} />
 
-      <div className="relative z-10 container mx-auto text-center px-4">
-        <div className="max-w-4xl mx-auto">
-          <span
-            className="inline-block glass-dark text-primary-foreground px-5 py-2 rounded-full text-sm font-medium mb-8 border border-primary-foreground/20 animate-fade-in"
-            style={{ animationDelay: "0.2s", animationFillMode: "both" }}
-          >
+      <div className="absolute inset-0 bg-gradient-hero" />
+
+      {/* Content */}
+      <div className="relative z-10 w-full">
+        <div className="w-full md:max-w-5xl md:mx-auto text-center">
+          
+          {/* Badge */}
+          <span className="inline-block glass-dark text-primary-foreground px-4 py-2 rounded-full text-xs sm:text-sm font-medium mb-6 border border-primary-foreground/20">
             ✦ Bureau d'Études d'Ingénieurs Conseils — Depuis 2013
           </span>
-          
-          <h1
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-primary-foreground leading-[1.1] mb-6 md:mb-8 animate-fade-in"
-            style={{ animationDelay: "0.4s", animationFillMode: "both" }}
-          >
+
+          {/* Title */}
+          <h1 className="font-bold text-primary-foreground leading-[1.2] mb-6
+            text-[clamp(1.8rem,5vw,3rem)] md:text-6xl lg:text-7xl">
+            
             Ingénierie au service
-            <br />
-            du{" "}
-            <span className="relative">
-              <span className="text-green-lime">Développement</span>
-              <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 300 12" fill="none">
-                <path d="M2 8C50 2 100 2 150 6C200 10 250 4 298 8" stroke="hsl(80 70% 55%)" strokeWidth="3" strokeLinecap="round" />
+            <br className="hidden sm:block" />
+
+            <span className="relative inline-block mt-2 sm:mt-0">
+              <span className="text-green-lime">
+                du Développement
+              </span>
+
+              <svg
+                className="absolute -bottom-1 left-0 w-full"
+                viewBox="0 0 300 12"
+                fill="none"
+              >
+                <path
+                  d="M2 8C50 2 100 2 150 6C200 10 250 4 298 8"
+                  stroke="hsl(80 70% 55%)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                />
               </svg>
             </span>
           </h1>
-          
-          <p
-            className="text-base md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 md:mb-12 leading-relaxed animate-fade-in px-2"
-            style={{ animationDelay: "0.6s", animationFillMode: "both" }}
-          >
-            Notre mission, rendre accessibles les services de l'Ingénieur Conseil aux populations. ICRED Mali accompagne le développement durable au Mali et en Afrique.
+
+          {/* Description */}
+          <p className="text-primary-foreground/80 mb-8 leading-relaxed
+            text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto">
+            Notre mission, rendre accessibles les services de l'Ingénieur Conseil aux populations.
+            ICRED Mali accompagne le développement durable au Mali et en Afrique.
           </p>
-          
-          <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in"
-            style={{ animationDelay: "0.8s", animationFillMode: "both" }}
-          >
+
+          {/* Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+            
             <a
               href="#services"
-              className="group bg-primary-foreground text-primary px-8 py-4 rounded-xl font-semibold hover:shadow-2xl hover:shadow-primary-foreground/20 transition-all duration-300 text-base flex items-center gap-2"
+              className="w-full sm:w-auto bg-primary-foreground text-primary px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2"
             >
               Découvrir nos services
-              <ArrowDown size={18} className="group-hover:translate-y-0.5 transition-transform" />
+              <ArrowDown size={18} />
             </a>
+
             <a
               href="#apropos"
-              className="group border-2 border-primary-foreground/30 text-primary-foreground px-8 py-4 rounded-xl font-semibold hover:bg-primary-foreground/10 hover:border-primary-foreground/50 transition-all duration-300 text-base flex items-center gap-2"
+              className="w-full sm:w-auto border-2 border-primary-foreground/30 text-primary-foreground px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2"
             >
               <Play size={16} className="fill-current" />
               En savoir plus
             </a>
           </div>
 
-          {/* Trust badges */}
-          <div
-            className="mt-10 md:mt-16 flex flex-wrap items-center justify-center gap-4 md:gap-8 text-primary-foreground/50 text-xs md:text-sm animate-fade-in"
-            style={{ animationDelay: "1s", animationFillMode: "both" }}
-          >
+          {/* Badges */}
+          <div className="mt-10 flex flex-wrap justify-center gap-4 text-primary-foreground/60 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-lime" />
               <span>12+ ans d'expérience</span>
             </div>
+
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-lime" />
               <span>17+ experts qualifiés</span>
             </div>
+
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-lime" />
               <span>Partenaire Huawei</span>
@@ -95,10 +99,10 @@ const HeroSection = () => {
         </div>
       </div>
 
+      {/* Scroll indicator */}
       <a
         href="#apropos"
-        className="absolute bottom-2 md:bottom-8 left-1/2 -translate-x-1/2 text-primary-foreground/40 hover:text-primary-foreground transition-all duration-300 hover:scale-110 hidden md:block"
-        style={{ animation: "float 2s ease-in-out infinite" }}
+        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-primary-foreground/40 hidden md:block"
       >
         <div className="w-8 h-12 rounded-full border-2 border-current flex items-start justify-center pt-2">
           <div className="w-1 h-3 bg-current rounded-full animate-bounce" />
