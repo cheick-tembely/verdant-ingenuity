@@ -69,8 +69,8 @@ const PartnersSection = () => {
 
         <div className={`relative space-y-6 reveal ${isVisible ? "visible" : ""}`}>
           {/* Fade edges */}
-          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-card to-transparent z-10" />
-          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-card to-transparent z-10" />
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-r from-background to-transparent z-10" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-24 md:w-40 bg-gradient-to-l from-background to-transparent z-10" />
 
           {/* Row 1 - left */}
           <div className="overflow-hidden">
