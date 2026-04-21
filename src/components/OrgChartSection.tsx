@@ -176,19 +176,13 @@ const OrgChartSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             La structure de direction d'ICRED Mali — cliquez sur un poste pour développer ou réduire ses équipes.
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-6">
             <Button
               onClick={() => setShowSchema(true)}
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <ImageIcon size={16} />
               Voir le schéma
-            </Button>
-            <Button asChild variant="outline">
-              <a href={organigrammeImg} download="organigramme-icred-mali.png">
-                <Download size={16} />
-                Télécharger (PNG)
-              </a>
             </Button>
           </div>
         </div>
