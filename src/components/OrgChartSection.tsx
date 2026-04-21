@@ -11,30 +11,51 @@ interface OrgNode {
 }
 
 const orgData: OrgNode = {
-  name: "Ismaïla KEITA",
+  name: "Lansine KEITA",
   title: "Directeur Général",
   department: "Direction Générale",
   icon: Award,
   children: [
     {
-      name: "Salia SIDIBE",
-      title: "Directeur Technique",
-      department: "Études et Travaux",
+      name: "Oumou KEITA",
+      title: "Assistante de Direction",
+      department: "Direction Générale",
       icon: Briefcase,
       children: [
-        { name: "Ahmed Ag M. Aly", title: "Chef de Projet", department: "Hydraulique & Hydro-agricole", icon: Users },
-        { name: "Mamba KONATE", title: "Chef de Projet", department: "Génie Civil & Travaux fluviaux", icon: Users },
-        { name: "Bourama KANADJIGUI", title: "Ingénieur", department: "Énergie & Photovoltaïque", icon: Users },
-      ],
-    },
-    {
-      name: "Dr M. K. N'DIAYE",
-      title: "Directeur Scientifique",
-      department: "Études & Appuis",
-      icon: Briefcase,
-      children: [
-        { name: "Fousseyni TRAORE", title: "Chef de Projet", department: "Environnement & Sécurité", icon: Users },
-        { name: "Dr Brahima DIALLO", title: "Chef département", department: "Développement social", icon: Users },
+        {
+          name: "Nigué Drissa SOGOBA",
+          title: "Chef de Département",
+          department: "Études, Contrôle & Travaux d'Infrastructures",
+          icon: Briefcase,
+          children: [
+            { name: "Fatoumata SANOGO", title: "Chargée des Offres", department: "Études & Travaux", icon: Users },
+            { name: "Adama DOUMBIA", title: "Division Études", department: "Études & Travaux", icon: Users },
+            { name: "Sidiki KEDÉ, Aboubacar DEMBÉLÉ, Aliou Badra", title: "Division Travaux", department: "Études & Travaux", icon: Users },
+            { name: "Mohamed DAO", title: "Division Topo", department: "Études & Travaux", icon: Users },
+          ],
+        },
+        {
+          name: "Moussa FOFANA",
+          title: "Chef de Département",
+          department: "Finances et Ressources Humaines",
+          icon: Briefcase,
+        },
+        {
+          name: "Ousseynou DIA",
+          title: "Chef de Département",
+          department: "Énergie et Génie Électrique",
+          icon: Briefcase,
+          children: [
+            { name: "Modibo KEITA", title: "Électro-mécanicien", department: "Énergie & Génie Électrique", icon: Users },
+            { name: "Sidiki COULIBALY", title: "Électro-mécanicien", department: "Énergie & Génie Électrique", icon: Users },
+          ],
+        },
+        {
+          name: "Sory COULIBALY",
+          title: "Chef de Département",
+          department: "Environnement, Suivi et Évaluation",
+          icon: Briefcase,
+        },
       ],
     },
   ],
