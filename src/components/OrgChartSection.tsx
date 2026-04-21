@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ChevronDown, ChevronUp, Users, Briefcase, Award } from "lucide-react";
+import { ChevronDown, ChevronUp, Users, Briefcase, Award, Image as ImageIcon, X, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import organigrammeImg from "@/assets/organigramme.png";
 
 interface OrgNode {
   name: string;
@@ -156,6 +158,7 @@ const OrgNodeCard = ({
 
 const OrgChartSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const [showSchema, setShowSchema] = useState(false);
 
   return (
     <section id="organigramme" className="section-padding relative overflow-hidden bg-card">
@@ -173,6 +176,21 @@ const OrgChartSection = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             La structure de direction d'ICRED Mali — cliquez sur un poste pour développer ou réduire ses équipes.
           </p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Button
+              onClick={() => setShowSchema(true)}
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <ImageIcon size={16} />
+              Voir le schéma
+            </Button>
+            <Button asChild variant="outline">
+              <a href={organigrammeImg} download="organigramme-icred-mali.png">
+                <Download size={16} />
+                Télécharger (PNG)
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="overflow-x-auto pb-4">
@@ -181,6 +199,34 @@ const OrgChartSection = () => {
           </div>
         </div>
       </div>
+
+      {showSchema && (
+        <div
+          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setShowSchema(false)}
+        >
+          <button
+            onClick={() => setShowSchema(false)}
+            className="absolute top-4 right-4 w-11 h-11 rounded-full bg-card border border-border flex items-center justify-center hover:bg-muted transition-colors"
+            aria-label="Fermer"
+          >
+            <X size={20} />
+          </button>
+          <div
+            className="relative max-w-6xl w-full max-h-[90vh] overflow-auto rounded-2xl bg-white shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={organigrammeImg}
+              alt="Organigramme officiel d'ICRED Mali — schéma fidèle"
+              className="w-full h-auto"
+              loading="lazy"
+              width={1200}
+              height={896}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
