@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import { ChevronDown, ChevronUp, Users, Briefcase, Award } from "lucide-react";
+import { ChevronDown, ChevronUp, Users, Briefcase, Award, Image as ImageIcon, X, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import organigrammeImg from "@/assets/organigramme.png";
 
 interface OrgNode {
   name: string;
