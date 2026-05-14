@@ -10,7 +10,7 @@ const HeroSection = () => {
       {/* Background */}
       <img
         src={heroBg}
-        alt="Infrastructure et développement au Mali"
+        alt="ICRED Mali — Bureau d'études et ingénieur conseil pour l'énergie solaire, l'eau et les infrastructures au Mali"
         className="absolute inset-0 w-full h-full object-cover scale-105"
       />
 
