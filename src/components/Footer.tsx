@@ -1,7 +1,11 @@
 import logo from "@/assets/icred-logo.png";
+import logo1 from "@/assets/logo.png";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { useState } from "react";
 
 const Footer = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <footer className="bg-gradient-dark text-primary-foreground relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
@@ -56,9 +60,32 @@ const Footer = () => {
           <p className="text-sm text-primary-foreground/40">
             © {new Date().getFullYear()} ICRED Mali SARL — Tous droits réservés
           </p>
-          <p className="text-xs text-primary-foreground/30">
-            RC : MA.BKO.2013.B.2382 | NIF : 085123935
-          </p>
+          <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1">
+              <span className="text-sm font-medium text-primary-foreground/60">
+                Réalisé par
+              </span>
+              <a 
+                href="https://exelite.net" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="relative inline-block h-6"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <span className={`text-sm font-semibold transition-all duration-300 ${isHovered ? 'opacity-0' : 'opacity-100 text-primary-foreground/80 hover:text-primary-foreground'}`}>
+                  Exelite
+                </span>
+                <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${isHovered ? 'opacity-100 scale-110' : 'opacity-0 scale-90'}`}>
+                  <img 
+                    src={logo1} 
+                    alt="Exelite" 
+                    className="h-6 w-auto transition-transform duration-300 hover:scale-125"
+                  />
+                </span>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
