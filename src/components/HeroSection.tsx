@@ -71,7 +71,7 @@ const HeroSection = () => {
             </a>
 
             <a
-              href="#apropos"
+        href="#apropos"
               className="w-full sm:w-auto border-2 border-primary-foreground/30 text-primary-foreground px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2"
             >
               <Play size={16} className="fill-current" />

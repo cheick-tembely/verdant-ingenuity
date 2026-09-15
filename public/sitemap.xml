@@ -5,4 +5,11 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+  <url><loc>https://icred-mali.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/bureau-etudes-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/topographie-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etudes-techniques-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/genie-civil-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etude-faisabilite-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

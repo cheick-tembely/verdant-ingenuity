@@ -2,6 +2,7 @@ import logo from "@/assets/icred-logo.png";
 import logo1 from "@/assets/logo.png";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const Footer = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,32 +12,43 @@ const Footer = () => {
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 py-16 relative">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 md:gap-10 mb-12">
           <div className="col-span-2 md:col-span-1">
             <img src={logo} alt="ICRED Mali" className="h-24 w-auto mb-4 brightness-0 invert" />
             <p className="text-sm text-primary-foreground/60 leading-relaxed">
               Ingénierie Conseil et de Recherche pour le Développement. Rendre accessibles les services de l'Ingénieur Conseil aux populations.
             </p>
+            <a href={whatsappUrl("Bonjour ICRED, je souhaite lancer mon projet avec vous.")} target="_blank" rel="noopener noreferrer" className="inline-flex mt-5 rounded-lg border border-primary-foreground/30 px-4 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary-foreground/10 transition-colors">Lancer votre projet</a>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/80">Navigation</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/60">
-              {["Accueil", "À propos", "Services", "Références", "Équipe", "Contact"].map((l) => (
-                <li key={l}>
-                  <a href={`#${l === "Accueil" ? "accueil" : l === "À propos" ? "apropos" : l.toLowerCase()}`} className="hover:text-primary-foreground transition-colors hover:translate-x-1 inline-block">
-                    {l}
-                  </a>
-                </li>
-              ))}
+              <li><a href="/#accueil" className="hover:text-primary-foreground transition-colors">Accueil</a></li>
+              <li><a href="/#apropos" className="hover:text-primary-foreground transition-colors">À propos</a></li>
+              <li><a href="/services" className="hover:text-primary-foreground transition-colors">Services</a></li>
+              <li><a href="/blog" className="hover:text-primary-foreground transition-colors">Blog</a></li>
+              <li><a href="/#references" className="hover:text-primary-foreground transition-colors">Références</a></li>
+              <li><a href="/#contact" className="hover:text-primary-foreground transition-colors">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/80">Services</h4>
+            <ul className="space-y-3 text-sm text-primary-foreground/60">
+              <li><a href="/bureau-etudes-mali" className="hover:text-primary-foreground transition-colors">Bureau d'études</a></li>
+              <li><a href="/topographie-mali" className="hover:text-primary-foreground transition-colors">Topographie</a></li>
+              <li><a href="/etudes-techniques-mali" className="hover:text-primary-foreground transition-colors">Études techniques</a></li>
+              <li><a href="/genie-civil-mali" className="hover:text-primary-foreground transition-colors">Génie civil & suivi</a></li>
+              <li><a href="/etude-faisabilite-mali" className="hover:text-primary-foreground transition-colors">Faisabilité & conseil</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-primary-foreground/80">Contact</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/60">
-              <li className="flex items-center gap-2"><Phone size={14} /> (+223) 76 08 58 47</li>
-              <li className="flex items-center gap-2"><Mail size={14} /> icred.mali@gmail.com</li>
+              <li><a href="tel:+22376085847" className="flex items-center gap-2 hover:text-primary-foreground transition-colors"><Phone size={14} /> (+223) 76 08 58 47</a></li>
+              <li><a href="mailto:contact@icred-mali.com" className="flex items-center gap-2 hover:text-primary-foreground transition-colors"><Mail size={14} /> contact@icred-mali.com</a></li>
               <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5 shrink-0" /> Sogoniko, Bamako, Mali</li>
             </ul>
           </div>

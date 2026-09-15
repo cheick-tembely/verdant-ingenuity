@@ -2,6 +2,8 @@ import {
   Sun, Droplets, Building, MapPin, Route, Leaf, BarChart3, Search, FlaskConical, Waves
 } from "lucide-react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Link } from "react-router-dom";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const services = [
   { icon: Sun, title: "Énergie", desc: "Centrales thermiques et solaires, hybridation électrique, installation photovoltaïque", accent: "from-amber-400 to-orange-500" },
@@ -37,6 +39,9 @@ const ServicesSection = () => {
             ICRED Mali intervient dans de nombreux domaines d'ingénierie au Mali et à l'étranger.
           </p>
         </div>
+        <div className="text-center -mt-8 mb-8">
+          <Link to="/services" className="inline-flex text-primary font-semibold hover:underline">Explorer toutes nos expertises →</Link>
+        </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 md:gap-5">
           {services.map((service, i) => (
@@ -56,6 +61,9 @@ const ServicesSection = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a href={whatsappUrl("Bonjour ICRED, je souhaite demander un accompagnement technique.")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center rounded-lg bg-gradient-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg hover:-translate-y-0.5 transition-transform">Demander un accompagnement technique</a>
         </div>
       </div>
     </section>

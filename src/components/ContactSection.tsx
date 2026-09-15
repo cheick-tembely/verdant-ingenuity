@@ -1,8 +1,24 @@
 import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { FormEvent } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const ContactSection = () => {
   const { ref, isVisible } = useScrollReveal();
+  const sendToWhatsApp = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = new FormData(event.currentTarget);
+    const message = [
+      "Bonjour ICRED, je souhaite vous contacter.",
+      "",
+      `Nom : ${form.get("name")}`,
+      `Email : ${form.get("email")}`,
+      `Sujet : ${form.get("subject")}`,
+      "",
+      "Message :",
+      String(form.get("message")),
+    ].join("\n");
+    window.open(`https://wa.me/22376085847?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+  };
 
   return (
     <section id="contact" className="section-padding bg-background relative overflow-hidden">
@@ -36,13 +52,13 @@ const ContactSection = () => {
               </div>
             </a>
 
-            <a href="mailto:icred.mali@gmail.com" className="group flex items-start gap-4 bg-card rounded-2xl p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-300">
+            <a href="mailto:contact@icred-mali.com" className="group flex items-start gap-4 bg-card rounded-2xl p-6 border border-border hover:border-primary/20 hover:shadow-xl transition-all duration-300">
               <div className="w-12 h-12 rounded-xl bg-green-pale flex items-center justify-center shrink-0 group-hover:bg-primary transition-colors duration-300">
                 <Mail className="text-primary group-hover:text-primary-foreground transition-colors" size={20} />
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1 text-sm">Email</h3>
-                <p className="text-sm text-muted-foreground">icred.mali@gmail.com</p>
+                <p className="text-sm text-muted-foreground">contact@icred-mali.com</p>
               </div>
             </a>
 
@@ -63,12 +79,14 @@ const ContactSection = () => {
           <div className={`lg:col-span-3 reveal-right ${isVisible ? "visible" : ""}`}>
             <div className="bg-card rounded-3xl p-8 border border-border shadow-sm">
               <h3 className="text-xl font-bold text-foreground mb-6 font-serif">Envoyez-nous un message</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4" onSubmit={sendToWhatsApp}>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1.5 block">Nom complet</label>
                     <input
                       type="text"
+                      name="name"
+                      required
                       placeholder="Votre nom"
                       className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     />
@@ -77,6 +95,8 @@ const ContactSection = () => {
                     <label className="text-sm font-medium text-foreground mb-1.5 block">Email</label>
                     <input
                       type="email"
+                      name="email"
+                      required
                       placeholder="votre@email.com"
                       className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     />
@@ -85,7 +105,9 @@ const ContactSection = () => {
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Sujet</label>
                   <input
-                    type="text"
+                      type="text"
+                      name="subject"
+                      required
                     placeholder="Sujet de votre message"
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   />
@@ -94,6 +116,8 @@ const ContactSection = () => {
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
                   <textarea
                     rows={4}
+                    name="message"
+                    required
                     placeholder="Décrivez votre projet..."
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
                   />
@@ -102,7 +126,7 @@ const ContactSection = () => {
                   type="submit"
                   className="w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
-                  Envoyer le message
+                  Envoyer via WhatsApp
                   <Send size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
               </form>
