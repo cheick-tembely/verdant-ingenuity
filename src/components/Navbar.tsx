@@ -5,15 +5,12 @@ import { whatsappUrl } from "@/lib/whatsapp";
 
 const navLinks = [
   { label: "Accueil", href: "/#accueil" },
-  { label: "À propos", href: "/#apropos" },
   { label: "Services", href: "/services" },
+  { label: "Bureau d'études", href: "/bureau-etudes-mali" },
+  { label: "Topographie", href: "/topographie-mali" },
+  { label: "Génie civil", href: "/genie-civil-mali" },
+  { label: "Énergie solaire", href: "/energie-solaire-mali" },
   { label: "Blog", href: "/blog" },
-  { label: "Découvrir", href: "/#decouvrir" },
-  { label: "Références", href: "/#references" },
-  { label: "Partenaires", href: "/#partenaires" },
-  
-  { label: "Organigramme", href: "/#organigramme" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 const serviceLinks = [
@@ -22,7 +19,14 @@ const serviceLinks = [
   { label: "Topographie", href: "/topographie-mali" },
   { label: "Études techniques", href: "/etudes-techniques-mali" },
   { label: "Génie civil & suivi", href: "/genie-civil-mali" },
+  { label: "Ingénierie & conseil", href: "/ingenierie-conseil-mali" },
   { label: "Faisabilité & conseil", href: "/etude-faisabilite-mali" },
+  { label: "Étude de projet", href: "/etude-projet-mali" },
+  { label: "BTP & construction", href: "/entreprise-btp-mali" },
+  { label: "Forage d'eau", href: "/forage-eau-mali" },
+  { label: "Énergie solaire", href: "/energie-solaire-mali" },
+  { label: "Étude environnementale", href: "/etude-environnementale-mali" },
+  { label: "Travaux routiers", href: "/travaux-routiers-mali" },
 ];
 
 const Navbar = () => {
@@ -66,8 +70,8 @@ const Navbar = () => {
                 <span className="inline-flex items-center gap-1">Services <ChevronDown size={15} className="group-hover:rotate-180 transition-transform" /></span>
               </a>
               <div className="absolute left-0 top-full pt-3 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
-                <div className="w-72 rounded-xl bg-card border border-border shadow-elevated p-2">
-                  {serviceLinks.map((service) => <a key={service.href} href={service.href} className="block rounded-lg px-4 py-2.5 text-sm text-foreground/75 hover:bg-green-pale hover:text-primary transition-colors">{service.label}</a>)}
+                <div className="grid w-[42rem] grid-cols-3 gap-2 rounded-xl bg-card border border-border shadow-elevated p-3">
+                  {serviceLinks.map((service) => <a key={service.href} href={service.href} className="flex min-h-12 items-center rounded-lg px-4 py-2.5 text-sm leading-snug text-foreground/75 hover:bg-green-pale hover:text-primary transition-colors">{service.label}</a>)}
                 </div>
               </div>
             </li>
@@ -109,7 +113,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden glass border-t border-border/50 pb-6 animate-fade-in">
+        <div className="lg:hidden glass max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-border/50 pb-6 animate-fade-in">
           <ul className="flex flex-col items-center gap-2 pt-4">
             {navLinks.map((link) => (
               <li key={link.href} className="w-full px-4">
@@ -120,9 +124,11 @@ const Navbar = () => {
                 >
                   {link.label}
                 </a>
-                {link.label === "Services" && <ul className="mx-3 mt-1 border-l border-primary/20 text-left">
-                  {serviceLinks.slice(1).map((service) => <li key={service.href}><a href={service.href} onClick={() => setIsOpen(false)} className="block px-4 py-2 text-sm text-foreground/60 hover:text-primary">{service.label}</a></li>)}
-                </ul>}
+                {link.label === "Services" && <div className="mx-1 mt-2 overflow-x-auto pb-3">
+                  <ul className="grid min-w-[34rem] grid-cols-3 gap-2 text-left">
+                    {serviceLinks.slice(1).map((service) => <li key={service.href}><a href={service.href} onClick={() => setIsOpen(false)} className="flex min-h-14 items-center justify-center rounded-lg bg-green-pale/60 px-3 py-2 text-center text-xs leading-snug text-foreground/70 hover:text-primary">{service.label}</a></li>)}
+                  </ul>
+                </div>}
               </li>
             ))}
             <li className="px-4 pt-2 w-full">

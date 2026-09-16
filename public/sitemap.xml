@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://icred-mali.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url><loc>https://icred-mali.com/services</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/bureau-etudes-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/topographie-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/etudes-techniques-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/genie-civil-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/etude-faisabilite-mali</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://icred-mali.com/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://icred-mali.com/</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://icred-mali.com/services</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/bureau-etudes-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/topographie-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etudes-techniques-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/genie-civil-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etude-faisabilite-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/ingenierie-conseil-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etude-projet-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/entreprise-btp-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/forage-eau-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/energie-solaire-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/etude-environnementale-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/travaux-routiers-mali</loc><lastmod>2026-09-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://icred-mali.com/blog</loc><lastmod>2026-09-16</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
 </urlset>

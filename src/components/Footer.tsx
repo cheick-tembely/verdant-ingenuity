@@ -40,7 +40,14 @@ const Footer = () => {
               <li><a href="/topographie-mali" className="hover:text-primary-foreground transition-colors">Topographie</a></li>
               <li><a href="/etudes-techniques-mali" className="hover:text-primary-foreground transition-colors">Études techniques</a></li>
               <li><a href="/genie-civil-mali" className="hover:text-primary-foreground transition-colors">Génie civil & suivi</a></li>
+              <li><a href="/ingenierie-conseil-mali" className="hover:text-primary-foreground transition-colors">Ingénierie & conseil</a></li>
               <li><a href="/etude-faisabilite-mali" className="hover:text-primary-foreground transition-colors">Faisabilité & conseil</a></li>
+              <li><a href="/etude-projet-mali" className="hover:text-primary-foreground transition-colors">Étude de projet</a></li>
+              <li><a href="/entreprise-btp-mali" className="hover:text-primary-foreground transition-colors">BTP & construction</a></li>
+              <li><a href="/forage-eau-mali" className="hover:text-primary-foreground transition-colors">Forage d'eau</a></li>
+              <li><a href="/energie-solaire-mali" className="hover:text-primary-foreground transition-colors">Énergie solaire</a></li>
+              <li><a href="/etude-environnementale-mali" className="hover:text-primary-foreground transition-colors">Étude environnementale</a></li>
+              <li><a href="/travaux-routiers-mali" className="hover:text-primary-foreground transition-colors">Travaux routiers</a></li>
             </ul>
           </div>
           

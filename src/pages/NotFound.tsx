@@ -1,8 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { usePageSeo } from "@/hooks/usePageSeo";
 
 const NotFound = () => {
   const location = useLocation();
+  usePageSeo("Page introuvable | ICRED Mali", "Cette page n'existe pas ou a été déplacée.", location.pathname, "website", "", { robots: "noindex, follow" });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);
