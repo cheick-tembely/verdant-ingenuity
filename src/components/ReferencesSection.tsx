@@ -1,6 +1,8 @@
 import { CheckCircle2, ArrowUpRight } from "lucide-react";
 import energyImg from "@/assets/energy-img.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Link } from "react-router-dom";
+import { projects } from "@/data/content";
 
 const references = [
   { title: "Centrale solaire 100 MWc", desc: "Études de faisabilité avec 100 MW de stockage sur 240 ha à Gongasso, Sikasso", tag: "Énergie" },
@@ -73,6 +75,15 @@ const ReferencesSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        <div className="border-t border-border pt-12">
+          <div className="mb-8 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+            <div><p className="font-semibold text-primary">Études de cas</p><h3 className="mt-1 text-2xl font-bold text-foreground">Découvrir quelques projets en détail</h3></div>
+            <span className="text-sm text-muted-foreground">Une sélection de réalisations ICRED</span>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => <Link key={project.slug} to={`/projets/${project.slug}`} className="group rounded-2xl border border-border bg-card p-6 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"><p className="text-sm font-semibold text-primary">{project.service}</p><h3 className="mt-2 text-xl font-bold text-foreground group-hover:text-primary">{project.title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{project.summary}</p><span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">Voir le projet <ArrowUpRight size={16} /></span></Link>)}
           </div>
         </div>
       </div>

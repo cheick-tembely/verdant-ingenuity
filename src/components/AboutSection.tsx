@@ -1,5 +1,5 @@
 import { Building2, Calendar, Users, Award, ArrowRight } from "lucide-react";
-import aboutImg from "@/assets/about-img.jpg";
+import icredTeamImg from "@/assets/icred-team.jpg";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stats = [
@@ -46,8 +46,8 @@ const AboutSection = () => {
           <div className={`relative reveal-right ${isVisible ? "visible" : ""}`}>
             <div className="relative">
               <img
-                src={aboutImg}
-                alt="Ingénieurs ICRED sur le terrain"
+                src={icredTeamImg}
+                alt="Équipe ICRED Mali"
                 className="rounded-3xl shadow-xl w-full object-cover aspect-[4/3]"
                 loading="lazy"
                 width={800}

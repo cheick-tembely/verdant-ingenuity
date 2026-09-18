@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Topographie", href: "/topographie-mali" },
   { label: "Génie civil", href: "/genie-civil-mali" },
   { label: "Énergie solaire", href: "/energie-solaire-mali" },
+  { label: "Projets", href: "/#references" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -27,6 +28,14 @@ const serviceLinks = [
   { label: "Énergie solaire", href: "/energie-solaire-mali" },
   { label: "Étude environnementale", href: "/etude-environnementale-mali" },
   { label: "Travaux routiers", href: "/travaux-routiers-mali" },
+];
+
+const projectLinks = [
+  { label: "Centrale solaire de Gongasso", href: "/projets/centrale-solaire-gongasso-sikasso" },
+  { label: "Solaire FGSP à Bamako", href: "/projets/maitrise-ouvrage-solaire-fgsp-bamako" },
+  { label: "Route Bamako–Kati", href: "/projets/etudes-bamako-kati-2x2-voies" },
+  { label: "Projet JIKURA – HELVETAS", href: "/projets/projet-jikura-eau-helvetas" },
+  { label: "Piste Dialakoroba–Kourouba", href: "/projets/etudes-hydrauliques-dialakoroba-kourouba" },
 ];
 
 const Navbar = () => {
@@ -57,7 +66,7 @@ const Navbar = () => {
         </a>
 
         <ul className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => link.label === "Services" ? (
+          {navLinks.map((link) => link.label === "Services" || link.label === "Projets" ? (
             <li key={link.href} className="group relative">
               <a
                 href={link.href}
@@ -67,11 +76,11 @@ const Navbar = () => {
                     : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
                 }`}
               >
-                <span className="inline-flex items-center gap-1">Services <ChevronDown size={15} className="group-hover:rotate-180 transition-transform" /></span>
+                <span className="inline-flex items-center gap-1">{link.label} <ChevronDown size={15} className="group-hover:rotate-180 transition-transform" /></span>
               </a>
               <div className="absolute left-0 top-full pt-3 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-200">
-                <div className="grid w-[42rem] grid-cols-3 gap-2 rounded-xl bg-card border border-border shadow-elevated p-3">
-                  {serviceLinks.map((service) => <a key={service.href} href={service.href} className="flex min-h-12 items-center rounded-lg px-4 py-2.5 text-sm leading-snug text-foreground/75 hover:bg-green-pale hover:text-primary transition-colors">{service.label}</a>)}
+                <div className={`grid gap-2 rounded-xl bg-card border border-border shadow-elevated p-3 ${link.label === "Services" ? "w-[42rem] grid-cols-3" : "w-[25rem] grid-cols-1"}`}>
+                  {(link.label === "Services" ? serviceLinks : projectLinks).map((item) => <a key={item.href} href={item.href} className="flex min-h-12 items-center rounded-lg px-4 py-2.5 text-sm leading-snug text-foreground/75 hover:bg-green-pale hover:text-primary transition-colors">{item.label}</a>)}
                 </div>
               </div>
             </li>
@@ -124,9 +133,9 @@ const Navbar = () => {
                 >
                   {link.label}
                 </a>
-                {link.label === "Services" && <div className="mx-1 mt-2 overflow-x-auto pb-3">
+                {(link.label === "Services" || link.label === "Projets") && <div className="mx-1 mt-2 overflow-x-auto pb-3">
                   <ul className="grid min-w-[34rem] grid-cols-3 gap-2 text-left">
-                    {serviceLinks.slice(1).map((service) => <li key={service.href}><a href={service.href} onClick={() => setIsOpen(false)} className="flex min-h-14 items-center justify-center rounded-lg bg-green-pale/60 px-3 py-2 text-center text-xs leading-snug text-foreground/70 hover:text-primary">{service.label}</a></li>)}
+                    {(link.label === "Services" ? serviceLinks.slice(1) : projectLinks).map((item) => <li key={item.href}><a href={item.href} onClick={() => setIsOpen(false)} className="flex min-h-14 items-center justify-center rounded-lg bg-green-pale/60 px-3 py-2 text-center text-xs leading-snug text-foreground/70 hover:text-primary">{item.label}</a></li>)}
                   </ul>
                 </div>}
               </li>

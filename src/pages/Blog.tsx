@@ -1,6 +1,9 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { usePageSeo, useStructuredData } from "@/hooks/usePageSeo";
+import { articles } from "@/data/content";
+import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import blogHero from "@/assets/service-heroes/blog.jpg";
 
 const Blog = () => {
@@ -25,6 +28,6 @@ const Blog = () => {
       },
     ],
   });
-  return <div className="min-h-screen bg-background"><Navbar /><main><section className="relative isolate overflow-hidden pt-36 pb-20 px-4 text-primary-foreground"><img src={blogHero} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" /><div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" /><div className="container mx-auto max-w-5xl"><p className="text-secondary font-semibold uppercase tracking-[.2em] text-xs mb-5">Conseils & expertise</p><h1 className="text-4xl md:text-6xl font-bold">Le blog ICRED Mali</h1></div></section></main><Footer /></div>;
+  return <div className="min-h-screen bg-background"><Navbar /><main><section className="relative isolate overflow-hidden pt-36 pb-20 px-4 text-primary-foreground"><img src={blogHero} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" /><div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" /><div className="container mx-auto max-w-5xl"><p className="text-secondary font-semibold uppercase tracking-[.2em] text-xs mb-5">Conseils & expertise</p><h1 className="text-4xl md:text-6xl font-bold">Le blog ICRED Mali</h1><p className="mt-5 max-w-2xl text-lg text-primary-foreground/85">Nos conseils pour préparer, concevoir et suivre les projets d'infrastructure, d'énergie et d'accès à l'eau au Mali.</p></div></section><section className="section-padding"><div className="container mx-auto max-w-6xl"><div className="mb-10"><p className="text-primary font-semibold">Nos publications</p><h2 className="mt-2 text-3xl font-bold">Conseils pour vos projets</h2></div><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{articles.map((article) => <article key={article.slug} className="overflow-hidden rounded-2xl border border-border bg-card shadow-card"><img src={article.image} alt="" className="h-44 w-full object-cover" /><div className="p-6"><p className="text-sm font-semibold text-primary">{article.service}</p><h3 className="mt-2 text-xl font-bold leading-snug">{article.title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{article.intro}</p><Link to={`/blog/${article.slug}`} className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">Lire l'article <ArrowRight size={17} /></Link></div></article>)}</div></div></section></main><Footer /></div>;
 };
 export default Blog;
