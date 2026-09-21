@@ -44,10 +44,20 @@ const projects = {
   "etudes-hydrauliques-dialakoroba-kourouba": ["Études hydrologiques et hydrauliques Dialakoroba–Kourouba", "Études hydrologiques et hydrauliques pour un projet de piste au Mali."],
 };
 
+const keywordPages = {
+  "assistance-maitrise-ouvrage-mali": ["Assistance à maîtrise d'ouvrage au Mali | ICRED Mali", "ICRED accompagne les maîtres d'ouvrage au Mali dans le cadrage, la préparation, la consultation et le suivi de leurs projets techniques et d'infrastructure.", "Service", "engineer"],
+  "etude-hydrologique-mali": ["Étude hydrologique au Mali | ICRED Mali", "ICRED réalise des études hydrologiques au Mali pour analyser les pluies, les écoulements, les bassins versants et les risques liés à l'eau.", "Service", "planning"],
+  "bureau-etudes-hydraulique-mali": ["Bureau d'études hydraulique au Mali | ICRED Mali", "ICRED accompagne les projets hydrauliques au Mali par les études de ressources, le dimensionnement des ouvrages, le drainage et la préparation des travaux.", "Service", "blueprints"],
+  "dossier-appel-offres-mali": ["Dossier d'appel d'offres au Mali | ICRED Mali", "ICRED prépare et structure les dossiers d'appel d'offres au Mali pour aider les maîtres d'ouvrage à consulter les entreprises sur une base technique claire.", "Service", "project"],
+  "controle-technique-travaux-mali": ["Contrôle technique des travaux au Mali | ICRED Mali", "ICRED accompagne le contrôle technique des travaux au Mali pour vérifier la conformité, la qualité, l'avancement et la bonne documentation des chantiers.", "Service", "construction"],
+};
+
 const pages = [
   ["/", "ICRED Mali | Bureau d'études & ingénieur conseil à Bamako", "ICRED Mali est un bureau d'études techniques et d'ingénierie conseil à Bamako : topographie, génie civil, énergie solaire, eau, routes, bâtiment et environnement.", "WebSite", assetUrl("hero-bg")],
   ["/services", "Services d'ingénierie au Mali | ICRED Mali", "Découvrez les services d'ICRED : bureau d'études, topographie, génie civil, faisabilité, énergie et infrastructures.", "CollectionPage", assetUrl("services-hero")],
   ...Object.entries(services).map(([slug, [title, description]]) => [`/${slug}`, `${title} | ICRED Mali`, description, "Service", assetUrl("engineer")]),
+  ["/plan-du-site", "Plan du site | ICRED Mali", "Découvrez toutes les pages, expertises, articles et références du site ICRED Mali.", "CollectionPage", assetUrl("icred-logo")],
+  ...Object.entries(keywordPages).map(([slug, [title, description, type, imagePrefix]]) => [`/${slug}`, title, description, type, assetUrl(imagePrefix)]),
   ["/blog", "Blog ingénierie & projets au Mali | ICRED Mali", "Conseils et actualités ICRED Mali sur l'ingénierie, les études techniques et les projets d'infrastructure.", "Blog", assetUrl("blog")],
   ...Object.entries(articles).map(([slug, [title, description]]) => [`/blog/${slug}`, `${title} | ICRED Mali`, description, "Article", assetUrl("blog")]),
   ...Object.entries(projects).map(([slug, [title, description]]) => [`/projets/${slug}`, `${title} | ICRED Mali`, description, "Article", assetUrl("project")]),
@@ -68,7 +78,18 @@ for (const [path, title, description, type, image] of pages) {
   // Static route output is a directory containing index.html. Hostinger's
   // canonical public address for such a page therefore ends with a slash.
   const url = `${baseUrl}${path === "/" ? "/" : `${path}/`}`;
-  const schema = JSON.stringify({ "@context": "https://schema.org", "@type": type, name: title.replace(" | ICRED Mali", ""), description, image, url, inLanguage: "fr-ML", provider: { "@id": `${baseUrl}/#organization` } });
+  const pageName = title.replace(" | ICRED Mali", "");
+  const schema = keywordPages[path.slice(1)]
+    ? JSON.stringify({ "@context": "https://schema.org", "@graph": [
+      { "@type": "WebPage", "@id": `${url}#webpage`, name: pageName, description, url, image, inLanguage: "fr-ML", isPartOf: { "@id": `${baseUrl}/#website` } },
+      { "@type": "ImageObject", "@id": `${url}#image`, url: image, contentUrl: image, caption: pageName },
+      { "@type": "Service", "@id": `${url}#service`, name: pageName, description, serviceType: pageName, provider: { "@id": `${baseUrl}/#organization` }, areaServed: { "@type": "Country", name: "Mali" }, url },
+      { "@type": "ProfessionalService", "@id": `${baseUrl}/#organization`, name: "ICRED Mali SARL", url: `${baseUrl}/`, telephone: "+223 76 08 58 47", address: { "@type": "PostalAddress", addressLocality: "Bamako", addressCountry: "ML" } },
+      { "@type": "BreadcrumbList", "@id": `${url}#breadcrumb`, itemListElement: [{ "@type": "ListItem", position: 1, name: "Accueil", item: `${baseUrl}/` }, { "@type": "ListItem", position: 2, name: "Services", item: `${baseUrl}/services/` }, { "@type": "ListItem", position: 3, name: pageName, item: url }] },
+      { "@type": "FAQPage", "@id": `${url}#faq`, mainEntity: [{ "@type": "Question", name: `Pourquoi choisir ICRED pour ${pageName.toLowerCase()} ?`, acceptedAnswer: { "@type": "Answer", text: description } }, { "@type": "Question", name: "Comment demander un accompagnement ?", acceptedAnswer: { "@type": "Answer", text: "Contactez ICRED par téléphone, WhatsApp ou par email pour présenter votre projet." } }] },
+      { "@type": "Offer", "@id": `${url}#offer`, name: pageName, url, priceCurrency: "XOF", availability: "https://schema.org/InStock", seller: { "@id": `${baseUrl}/#organization` } },
+    ] })
+    : JSON.stringify({ "@context": "https://schema.org", "@type": type, name: pageName, description, image, url, inLanguage: "fr-ML", provider: { "@id": `${baseUrl}/#organization` } });
   const fallback = `<noscript><main><nav><a href="/">Accueil</a> › <a href="/services">Services</a></nav><h1>${escape(title.replace(" | ICRED Mali", ""))}</h1><p>${escape(description)}</p><p>ICRED Mali, bureau d'études et ingénierie conseil à Bamako, accompagne les projets au Mali.</p><p><a href="/services">Découvrir nos services</a> · <a href="/blog">Lire nos conseils</a></p></main></noscript>`;
   const html = source
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(title)}</title>`)
