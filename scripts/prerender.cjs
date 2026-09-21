@@ -50,6 +50,11 @@ const keywordPages = {
   "bureau-etudes-hydraulique-mali": ["Bureau d'études hydraulique au Mali | ICRED Mali", "ICRED accompagne les projets hydrauliques au Mali par les études de ressources, le dimensionnement des ouvrages, le drainage et la préparation des travaux.", "Service", "blueprints"],
   "dossier-appel-offres-mali": ["Dossier d'appel d'offres au Mali | ICRED Mali", "ICRED prépare et structure les dossiers d'appel d'offres au Mali pour aider les maîtres d'ouvrage à consulter les entreprises sur une base technique claire.", "Service", "project"],
   "controle-technique-travaux-mali": ["Contrôle technique des travaux au Mali | ICRED Mali", "ICRED accompagne le contrôle technique des travaux au Mali pour vérifier la conformité, la qualité, l'avancement et la bonne documentation des chantiers.", "Service", "construction"],
+  "audit-energetique-mali": ["Audit énergétique au Mali | ICRED Mali", "ICRED réalise des audits énergétiques au Mali pour analyser les consommations, identifier les pertes et prioriser les solutions d'efficacité et d'énergie solaire.", "Service", "solar"],
+  "etude-geotechnique-mali": ["Étude géotechnique au Mali | ICRED Mali", "ICRED accompagne les études géotechniques au Mali pour mieux connaître les sols, sécuriser les fondations et adapter la conception des bâtiments et infrastructures.", "Service", "construction"],
+  "etude-vrd-mali": ["Étude VRD au Mali | ICRED Mali", "ICRED réalise des études VRD au Mali pour concevoir les voiries et réseaux divers d'un lotissement, d'un site industriel ou d'un aménagement urbain.", "Service", "blueprints"],
+  "suivi-evaluation-projet-mali": ["Suivi-évaluation de projet au Mali | ICRED Mali", "ICRED accompagne le suivi-évaluation des projets au Mali pour mesurer les résultats, documenter les progrès et améliorer les décisions des organisations et partenaires.", "Service", "engineer"],
+  "etude-hydrogeologique-mali": ["Étude hydrogéologique au Mali | ICRED Mali", "ICRED accompagne les études hydrogéologiques au Mali pour mieux caractériser les ressources souterraines et préparer des projets de forage et d'adduction d'eau durables.", "Service", "planning"],
 };
 
 const pages = [

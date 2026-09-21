@@ -34,6 +34,11 @@ const App = () => (
           <Route path="/bureau-etudes-hydraulique-mali" element={<KeywordPage />} />
           <Route path="/dossier-appel-offres-mali" element={<KeywordPage />} />
           <Route path="/controle-technique-travaux-mali" element={<KeywordPage />} />
+          <Route path="/audit-energetique-mali" element={<KeywordPage />} />
+          <Route path="/etude-geotechnique-mali" element={<KeywordPage />} />
+          <Route path="/etude-vrd-mali" element={<KeywordPage />} />
+          <Route path="/suivi-evaluation-projet-mali" element={<KeywordPage />} />
+          <Route path="/etude-hydrogeologique-mali" element={<KeywordPage />} />
           <Route path="/:slug" element={<ServiceDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

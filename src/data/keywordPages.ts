@@ -3,6 +3,7 @@ import engineerHero from "@/assets/service-heroes/engineer.jpg";
 import planningHero from "@/assets/service-heroes/planning.jpg";
 import blueprintsHero from "@/assets/service-heroes/blueprints.jpg";
 import projectHero from "@/assets/service-heroes/project.jpg";
+import solarHero from "@/assets/service-heroes/solar.jpg";
 
 export type KeywordPageData = {
   slug: string;
@@ -128,6 +129,116 @@ export const keywordPages: KeywordPageData[] = [
       { question: "Le contrôle technique remplace-t-il l'entreprise ?", answer: "Non. L'entreprise reste responsable de l'exécution ; le contrôle apporte au maître d'ouvrage une vérification indépendante et des constats documentés." },
     ],
     relatedLinks: [{ label: "Génie civil au Mali", href: "/genie-civil-mali" }, { label: "Entreprise BTP au Mali", href: "/entreprise-btp-mali" }, { label: "Assistance à maîtrise d'ouvrage", href: "/assistance-maitrise-ouvrage-mali" }],
+  },
+  {
+    slug: "audit-energetique-mali",
+    eyebrow: "Performance & énergie",
+    title: "Audit énergétique au Mali",
+    description: "ICRED réalise des audits énergétiques au Mali pour analyser les consommations, identifier les pertes et prioriser les solutions d'efficacité et d'énergie solaire.",
+    keywords: "audit énergétique Mali, audit énergétique Bamako, efficacité énergétique entreprise Mali, diagnostic consommation énergie",
+    image: solarHero,
+    serviceType: "Audit énergétique",
+    benefits: ["Une lecture précise des usages et consommations", "Des économies d'énergie hiérarchisées", "Des scénarios solaires et d'efficacité adaptés au site"],
+    sections: [
+      { heading: "Mesurer avant d'investir", paragraphs: ["Un audit énergétique fournit une vision structurée des consommations d'un bâtiment, d'une entreprise ou d'une installation. ICRED examine les usages, les équipements, les horaires de fonctionnement et les contraintes d'exploitation afin de distinguer les besoins réels des pertes évitables.", "Cette démarche permet de choisir des actions fondées sur des données plutôt que sur une estimation générale du besoin."] },
+      { heading: "Analyser les postes de consommation", paragraphs: ["L'analyse peut porter sur l'éclairage, la climatisation, le pompage, les moteurs, les équipements informatiques, les groupes électrogènes et les installations photovoltaïques existantes. Les profils de charge et les conditions d'utilisation sont rapprochés des factures et des relevés disponibles.", "Les anomalies, surdimensionnements et usages inefficaces sont identifiés avec leurs causes possibles."] },
+      { heading: "Construire un plan d'actions réaliste", paragraphs: ["Les recommandations sont hiérarchisées selon l'investissement, l'économie attendue, la facilité de mise en œuvre, la maintenance et le temps de retour. L'audit peut proposer des mesures de réglage, de remplacement, d'isolation, de pilotage ou d'amélioration des usages.", "Les solutions solaires, le stockage et l'hybridation sont étudiés lorsqu'ils répondent réellement au profil énergétique du site."] },
+      { heading: "Préparer la décision et le suivi", paragraphs: ["Un rapport utile présente les hypothèses, les mesures, les scénarios, les priorités et les indicateurs de suivi. Il aide le décideur à programmer les travaux et à comparer les gains obtenus après mise en œuvre.", "ICRED peut prolonger l'audit par une étude de faisabilité, un dimensionnement photovoltaïque ou une assistance au suivi du projet."] },
+    ],
+    faqs: [
+      { question: "À qui s'adresse un audit énergétique au Mali ?", answer: "Il s'adresse aux entreprises, bâtiments, collectivités, institutions et sites qui souhaitent comprendre leurs consommations et réduire leurs coûts ou leur dépendance énergétique." },
+      { question: "Un audit énergétique inclut-il une installation solaire ?", answer: "Il peut évaluer la pertinence d'une installation solaire, mais le dimensionnement détaillé fait généralement l'objet d'une étude complémentaire." },
+      { question: "Quelles données préparer avant l'audit ?", answer: "Les factures, horaires d'utilisation, plans, inventaires d'équipements, historiques de maintenance et informations sur les groupes ou installations existantes sont utiles." },
+    ],
+    relatedLinks: [{ label: "Énergie solaire au Mali", href: "/energie-solaire-mali" }, { label: "Étude de faisabilité au Mali", href: "/etude-faisabilite-mali" }, { label: "Études techniques au Mali", href: "/etudes-techniques-mali" }],
+  },
+  {
+    slug: "etude-geotechnique-mali",
+    eyebrow: "Sol & fondations",
+    title: "Étude géotechnique au Mali",
+    description: "ICRED accompagne les études géotechniques au Mali pour mieux connaître les sols, sécuriser les fondations et adapter la conception des bâtiments et infrastructures.",
+    keywords: "étude géotechnique Mali, étude de sol Bamako, fondations bâtiment Mali, reconnaissance des sols, géotechnique construction",
+    image: constructionHero,
+    serviceType: "Étude géotechnique",
+    benefits: ["Une connaissance documentée du sol", "Des recommandations pour les fondations et terrassements", "Une conception mieux adaptée aux risques du site"],
+    sections: [
+      { heading: "Le sol est une donnée de conception", paragraphs: ["La stabilité d'un bâtiment, d'une route ou d'un ouvrage dépend de la relation entre la structure et le sol qui la porte. Une étude géotechnique apporte les informations nécessaires pour réduire les incertitudes sur la portance, les tassements, l'eau souterraine et les terrassements.", "Elle complète la topographie et permet aux ingénieurs de concevoir avec des hypothèses adaptées au site réel."] },
+      { heading: "Reconnaître les caractéristiques du terrain", paragraphs: ["La mission est définie selon le type d'ouvrage, les charges, la profondeur des fondations et les conditions du terrain. Les reconnaissances, sondages et essais appropriés permettent de caractériser les couches rencontrées et leurs comportements.", "Les résultats sont interprétés avec les données du projet, la topographie et les observations de terrain."] },
+      { heading: "Adapter les fondations et les terrassements", paragraphs: ["Les recommandations peuvent porter sur le type de fondation, la profondeur, les contraintes admissibles, les remblais, les déblais, la plateforme et les dispositions de drainage. Cette analyse évite de retenir une solution standard sans vérifier sa compatibilité avec le sol.", "Elle contribue aussi à mieux estimer les travaux et les risques techniques avant la consultation des entreprises."] },
+      { heading: "Anticiper les risques d'exécution", paragraphs: ["La présence d'eau, les sols compressibles, les variations de matériaux ou les difficultés d'accès peuvent modifier le calendrier et le coût. Les identifier en amont facilite la préparation des travaux et la mise en place de contrôles adaptés.", "ICRED articule les conclusions géotechniques avec les études de génie civil, de routes et d'aménagement."] },
+    ],
+    faqs: [
+      { question: "Pourquoi réaliser une étude de sol avant de construire ?", answer: "Elle permet d'adapter les fondations et les terrassements aux caractéristiques réelles du terrain et de limiter les risques de tassement ou de désordre." },
+      { question: "L'étude géotechnique concerne-t-elle uniquement les bâtiments ?", answer: "Non. Elle peut concerner les routes, plateformes, ponts, réseaux, ouvrages hydrauliques, bâtiments et autres infrastructures." },
+      { question: "La topographie remplace-t-elle une étude géotechnique ?", answer: "Non. La topographie décrit la forme et les niveaux du terrain, tandis que la géotechnique étudie la nature et le comportement des sols." },
+    ],
+    relatedLinks: [{ label: "Topographie au Mali", href: "/topographie-mali" }, { label: "Génie civil au Mali", href: "/genie-civil-mali" }, { label: "Études techniques au Mali", href: "/etudes-techniques-mali" }],
+  },
+  {
+    slug: "etude-vrd-mali",
+    eyebrow: "Aménagement & réseaux",
+    title: "Étude VRD au Mali",
+    description: "ICRED réalise des études VRD au Mali pour concevoir les voiries et réseaux divers d'un lotissement, d'un site industriel, d'un projet immobilier ou d'un aménagement urbain.",
+    keywords: "étude VRD Mali, voirie réseaux divers Bamako, étude lotissement Mali, réseaux eau assainissement, aménagement urbain",
+    image: blueprintsHero,
+    serviceType: "Étude de voirie et réseaux divers",
+    benefits: ["Une organisation cohérente des voiries et réseaux", "Des plans et quantités utiles aux travaux", "Une coordination entre terrain, eau, assainissement et accès"],
+    sections: [
+      { heading: "Concevoir un site fonctionnel et accessible", paragraphs: ["Une étude VRD organise les accès, les voiries, les niveaux, les réseaux et l'écoulement des eaux sur un site. Elle est essentielle pour transformer un terrain en lotissement, zone d'activités, équipement public ou projet immobilier exploitable.", "ICRED recherche une cohérence entre les usages, la topographie, les contraintes foncières, les réseaux existants et les besoins futurs."] },
+      { heading: "Étudier les voiries et les niveaux", paragraphs: ["Les tracés, profils, pentes, emprises et plateformes sont étudiés pour assurer la circulation, l'accès aux parcelles et la durabilité des chaussées. Les choix prennent en compte le trafic attendu, les matériaux disponibles, le drainage et les conditions de maintenance.", "Une bonne définition des niveaux limite les problèmes d'accès, de ruissellement et de raccordement entre les ouvrages."] },
+      { heading: "Coordonner eau, assainissement et drainage", paragraphs: ["Les réseaux d'eau potable, d'assainissement, d'eaux pluviales, d'électricité ou de télécommunication doivent être implantés avec méthode. L'étude VRD réserve les emprises, évite les conflits entre réseaux et facilite les interventions futures.", "L'analyse des écoulements et des points bas permet de prévoir des solutions de drainage adaptées au site."] },
+      { heading: "Préparer les documents de réalisation", paragraphs: ["Selon le projet, les livrables comprennent des plans, profils, détails techniques, estimations, quantitatifs, phasage et prescriptions. Ces documents facilitent la consultation des entreprises, le suivi des travaux et le contrôle des quantités.", "ICRED peut accompagner le maître d'ouvrage de l'étude initiale à la réception des travaux VRD."] },
+    ],
+    faqs: [
+      { question: "Que signifie VRD ?", answer: "VRD signifie voirie et réseaux divers. Le terme regroupe notamment les voies, réseaux d'eau, assainissement, drainage et autres réseaux nécessaires à l'aménagement d'un site." },
+      { question: "Une étude VRD est-elle obligatoire pour un lotissement ?", answer: "Les exigences dépendent du projet et des règles applicables, mais une étude VRD est indispensable pour concevoir des accès et réseaux cohérents et chiffrer les travaux." },
+      { question: "Quels documents sont produits par une étude VRD ?", answer: "Elle peut produire des plans, profils, détails de réseaux, estimations, quantitatifs, prescriptions techniques et éléments de consultation." },
+    ],
+    relatedLinks: [{ label: "Travaux routiers au Mali", href: "/travaux-routiers-mali" }, { label: "Topographie au Mali", href: "/topographie-mali" }, { label: "Étude hydrologique au Mali", href: "/etude-hydrologique-mali" }],
+  },
+  {
+    slug: "suivi-evaluation-projet-mali",
+    eyebrow: "Résultats & pilotage",
+    title: "Suivi-évaluation de projet au Mali",
+    description: "ICRED accompagne le suivi-évaluation des projets au Mali pour mesurer les résultats, documenter les progrès et améliorer les décisions des organisations et partenaires.",
+    keywords: "suivi-évaluation projet Mali, évaluation projet développement Bamako, indicateurs projet Mali, suivi impact programme",
+    image: engineerHero,
+    serviceType: "Suivi-évaluation de projet",
+    benefits: ["Des indicateurs reliés aux objectifs", "Des données organisées et interprétables", "Des recommandations utiles au pilotage"],
+    sections: [
+      { heading: "Transformer les données en décisions", paragraphs: ["Le suivi-évaluation permet de savoir ce qui a été réalisé, pour qui, dans quels délais et avec quels résultats. ICRED aide les porteurs de projets, collectivités, ONG et partenaires à organiser une information utile au pilotage plutôt qu'une simple accumulation de rapports.", "La démarche relie les activités, les produits, les effets attendus et les moyens mobilisés."] },
+      { heading: "Construire un dispositif proportionné", paragraphs: ["Un bon dispositif commence par une clarification des objectifs, des résultats attendus, des indicateurs, des sources de données et des responsabilités. Les outils sont adaptés à la taille du projet, au calendrier, aux ressources et aux exigences du bailleur.", "Les indicateurs doivent être compréhensibles, mesurables et suffisamment stables pour suivre l'évolution du projet."] },
+      { heading: "Collecter et analyser les résultats", paragraphs: ["ICRED peut contribuer à structurer les fiches de collecte, les tableaux de bord, les entretiens, les enquêtes et les rapports périodiques. L'analyse met en évidence les progrès, les écarts, les facteurs de réussite et les difficultés d'exécution.", "Les données quantitatives sont complétées par l'écoute des bénéficiaires et l'observation des changements sur le terrain."] },
+      { heading: "Apprendre et améliorer l'action", paragraphs: ["L'évaluation ne doit pas seulement constater les résultats ; elle doit aider à décider. Les recommandations sont formulées de manière opérationnelle, avec des priorités, des responsables et des échéances lorsque cela est pertinent.", "Cette approche favorise la capitalisation, la redevabilité et l'amélioration continue des programmes."] },
+    ],
+    faqs: [
+      { question: "Quelle différence entre suivi et évaluation ?", answer: "Le suivi observe régulièrement l'avancement et les activités, tandis que l'évaluation analyse plus largement les résultats, les effets, la pertinence et les enseignements d'un projet." },
+      { question: "Quels projets peuvent être suivis et évalués ?", answer: "Les programmes d'eau, d'énergie, d'infrastructure, d'environnement, de développement local et les projets financés par des partenaires peuvent disposer d'un système de suivi-évaluation." },
+      { question: "Quand mettre en place un dispositif de suivi-évaluation ?", answer: "Il est préférable de le définir dès la conception du projet, mais il peut être structuré ou amélioré à n'importe quelle étape de la mise en œuvre." },
+    ],
+    relatedLinks: [{ label: "Étude de faisabilité au Mali", href: "/etude-faisabilite-mali" }, { label: "Ingénierie conseil au Mali", href: "/ingenierie-conseil-mali" }, { label: "Étude environnementale au Mali", href: "/etude-environnementale-mali" }],
+  },
+  {
+    slug: "etude-hydrogeologique-mali",
+    eyebrow: "Ressource en eau",
+    title: "Étude hydrogéologique au Mali",
+    description: "ICRED accompagne les études hydrogéologiques au Mali pour mieux caractériser les ressources souterraines et préparer des projets de forage et d'adduction d'eau durables.",
+    keywords: "étude hydrogéologique Mali, hydrogéologie Bamako, recherche eau souterraine, étude forage Mali, ressource aquifère",
+    image: planningHero,
+    serviceType: "Étude hydrogéologique",
+    benefits: ["Une analyse du contexte géologique et hydrogéologique", "Une aide à la localisation et à la conception des forages", "Une approche liée aux besoins et à l'exploitation de l'eau"],
+    sections: [
+      { heading: "Comprendre la ressource souterraine", paragraphs: ["Une étude hydrogéologique cherche à comprendre où se trouve l'eau souterraine, dans quelles conditions elle peut être mobilisée et comment elle peut répondre durablement aux besoins. Elle associe les informations géologiques, les observations de terrain et les données disponibles.", "Au Mali, la qualité de l'analyse dépend aussi de la connaissance des usages, de la saisonnalité et des conditions d'accès au site."] },
+      { heading: "Préparer la recherche de forage", paragraphs: ["Avant de réaliser un forage, il est important de préciser le besoin, le débit recherché, la profondeur envisageable, les contraintes d'implantation et les conditions d'exploitation. L'étude aide à hiérarchiser les secteurs et à définir les reconnaissances complémentaires.", "Elle ne garantit pas à elle seule un résultat de forage, mais elle réduit l'incertitude et améliore la préparation de la mission."] },
+      { heading: "Relier ressource, pompage et réseau", paragraphs: ["La ressource doit être étudiée avec le système qui l'utilisera : pompage, énergie, stockage, traitement éventuel, réseau et usages. Une solution techniquement possible peut devenir inadaptée si elle est trop coûteuse à exploiter ou difficile à maintenir.", "ICRED relie les recommandations hydrogéologiques aux études d'eau potable, de forage et d'adduction."] },
+      { heading: "Prévoir une exploitation durable", paragraphs: ["La protection du point d'eau, la qualité, le suivi des débits, la maintenance et la gestion des équipements doivent être anticipés. Les recommandations tiennent compte des capacités locales et des besoins des usagers.", "Cette approche prépare des décisions plus solides pour les projets ruraux, urbains, agricoles et institutionnels."] },
+    ],
+    faqs: [
+      { question: "À quoi sert une étude hydrogéologique avant un forage ?", answer: "Elle aide à comprendre le contexte de la ressource souterraine, à orienter les reconnaissances et à préparer l'implantation et les caractéristiques du forage." },
+      { question: "Une étude hydrogéologique garantit-elle la présence d'eau ?", answer: "Aucune étude ne peut garantir seule un résultat ; elle réduit cependant l'incertitude en s'appuyant sur les données et méthodes adaptées au site." },
+      { question: "L'étude couvre-t-elle aussi l'adduction d'eau ?", answer: "Elle peut être complétée par l'étude du pompage, du stockage, de l'énergie et du réseau d'adduction afin de concevoir un système cohérent." },
+    ],
+    relatedLinks: [{ label: "Forage d'eau au Mali", href: "/forage-eau-mali" }, { label: "Bureau d'études hydraulique au Mali", href: "/bureau-etudes-hydraulique-mali" }, { label: "Étude hydrologique au Mali", href: "/etude-hydrologique-mali" }],
   },
 ];
 
