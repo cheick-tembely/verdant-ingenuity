@@ -50,7 +50,6 @@ export const usePageSeo = (
     upsertMeta('meta[name="twitter:description"]', "name", "twitter:description", description);
     upsertMeta('meta[name="twitter:card"]', "name", "twitter:card", "summary_large_image");
     upsertMeta('meta[name="twitter:image"]', "name", "twitter:image", image);
-    if (keywords) upsertMeta('meta[name="keywords"]', "name", "keywords", keywords);
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");

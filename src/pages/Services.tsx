@@ -31,7 +31,7 @@ const Services = () => {
         "@type": "CollectionPage",
         name: "Services d'ingénierie au Mali",
         description: "Services d'ICRED Mali : bureau d'études, topographie, études techniques, génie civil, faisabilité, BTP, forage, énergie solaire, environnement et travaux routiers.",
-        url: "https://icred-mali.com/services",
+        url: "https://icred-mali.com/services/",
         inLanguage: "fr-ML",
         provider: { "@id": "https://icred-mali.com/#organization" },
       },
@@ -49,7 +49,7 @@ const Services = () => {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: "https://icred-mali.com/" },
-          { "@type": "ListItem", position: 2, name: "Services", item: "https://icred-mali.com/services" },
+          { "@type": "ListItem", position: 2, name: "Services", item: "https://icred-mali.com/services/" },
         ],
       },
     ],

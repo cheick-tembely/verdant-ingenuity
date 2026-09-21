@@ -2,6 +2,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import NotFound from "@/pages/NotFound";
 import { usePageSeo, useStructuredData } from "@/hooks/usePageSeo";
 import { whatsappUrl } from "@/lib/whatsapp";
 import blueprintsHero from "@/assets/service-heroes/blueprints.jpg";
@@ -76,7 +77,7 @@ const serviceLinks = {
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = services[slug as keyof typeof services];
-  const pageUrl = `https://icred-mali.com/${slug ?? ""}`;
+  const pageUrl = `https://icred-mali.com/${slug ?? ""}/`;
   const heroImage = serviceHeroImages[slug ?? ""] ?? engineerHero;
   const relatedServices = (serviceLinks[slug as keyof typeof serviceLinks] ?? []).map((relatedSlug) => ({
     slug: relatedSlug,
@@ -95,14 +96,14 @@ const ServiceDetail = () => {
     "@context": "https://schema.org",
     "@graph": [
       { "@type": "Service", name: service.title, description: service.intro, keywords: seoKeywords[slug ?? ""], provider: { "@id": "https://icred-mali.com/#organization", "@type": "ProfessionalService", name: "ICRED Mali SARL", telephone: "+22376085847", address: { "@type": "PostalAddress", addressLocality: "Bamako", addressCountry: "ML" } }, areaServed: { "@type": "Country", name: "Mali" }, url: pageUrl, serviceType: service.eyebrow, offers: { "@type": "Offer", availability: "https://schema.org/InStock", areaServed: "Mali", priceCurrency: "XOF", url: pageUrl } },
-      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Accueil", item: "https://icred-mali.com/" }, { "@type": "ListItem", position: 2, name: "Services", item: "https://icred-mali.com/services" }, { "@type": "ListItem", position: 3, name: service.title, item: pageUrl }] },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "Accueil", item: "https://icred-mali.com/" }, { "@type": "ListItem", position: 2, name: "Services", item: "https://icred-mali.com/services/" }, { "@type": "ListItem", position: 3, name: service.title, item: pageUrl }] },
       { "@type": "FAQPage", mainEntity: [
         { "@type": "Question", name: `Pourquoi faire appel à ICRED pour ${service.title.toLowerCase()} ?`, acceptedAnswer: { "@type": "Answer", text: "ICRED apporte une expertise locale, une méthodologie structurée et un accompagnement adapté aux contraintes de chaque projet au Mali." } },
         { "@type": "Question", name: "Comment demander un devis ou un accompagnement ?", acceptedAnswer: { "@type": "Answer", text: "Contactez ICRED par téléphone, WhatsApp ou via le formulaire de contact afin de présenter votre besoin et recevoir une réponse adaptée." } }
       ] }
     ]
   } : {});
-  if (!service) return null;
+  if (!service) return <NotFound />;
   return <div className="min-h-screen bg-background"><Navbar /><main>
     <section className="relative isolate overflow-hidden pt-36 pb-20 px-4 text-primary-foreground"><img src={heroImage} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" /><div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" /><div className="container mx-auto max-w-5xl"><p className="text-secondary font-semibold uppercase tracking-[.2em] text-xs mb-5">{service.eyebrow}</p><h1 className="text-4xl md:text-6xl font-bold max-w-4xl">{service.title}</h1><p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 max-w-3xl">{service.intro}</p><p className="mt-7 text-sm text-primary-foreground/70 border-l-2 border-secondary pl-4">{service.keywords}</p></div></section>
     <section className="section-padding"><div className="container mx-auto max-w-5xl grid lg:grid-cols-[1fr_.7fr] gap-12"><div className="space-y-10">{service.sections.map(([heading, text]) => <article key={heading}><h2 className="text-3xl font-bold mb-4">{heading}</h2><p className="text-muted-foreground leading-8 text-lg">{text}</p></article>)}</div><aside className="rounded-2xl bg-card border border-border p-7 h-fit"><h2 className="text-2xl font-bold mb-6">Notre accompagnement</h2><ul className="space-y-4">{service.benefits.map((benefit) => <li key={benefit} className="flex gap-3 text-foreground/80"><CheckCircle2 className="shrink-0 text-primary" size={20}/>{benefit}</li>)}</ul><a href={whatsappUrl(`Bonjour ICRED, je souhaite parler de mon projet de ${service.title.toLowerCase()}.`)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-5 py-3 rounded-lg font-semibold">Parler de votre projet <ArrowRight size={17}/></a></aside></div></section>

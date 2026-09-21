@@ -1,10 +1,16 @@
 /* Generates static, crawlable HTML for every public URL after Vite builds. */
-const { mkdirSync, readFileSync, writeFileSync } = require("node:fs");
+const { mkdirSync, readFileSync, readdirSync, writeFileSync } = require("node:fs");
 const { join } = require("node:path");
 
 const distDir = join(__dirname, "..", "dist");
 const baseUrl = "https://icred-mali.com";
 const templatePath = join(distDir, ".seo-template.html");
+const assetsDir = join(distDir, "assets");
+
+const assetUrl = (prefix) => {
+  const filename = readdirSync(assetsDir).find((name) => name.startsWith(`${prefix}-`));
+  return filename ? `${baseUrl}/assets/${filename}` : `${baseUrl}/favicon.png`;
+};
 
 const services = {
   "bureau-etudes-mali": ["Bureau d'études au Mali", "ICRED est un bureau d'études techniques au Mali qui accompagne les projets publics et privés avec une approche fiable et adaptée au terrain."],
@@ -39,12 +45,12 @@ const projects = {
 };
 
 const pages = [
-  ["/", "ICRED Mali | Bureau d'études & ingénieur conseil à Bamako", "ICRED Mali est un bureau d'études techniques et d'ingénierie conseil à Bamako : topographie, génie civil, énergie solaire, eau, routes, bâtiment et environnement.", "WebSite"],
-  ["/services", "Services d'ingénierie au Mali | ICRED Mali", "Découvrez les services d'ICRED : bureau d'études, topographie, génie civil, faisabilité, énergie et infrastructures.", "CollectionPage"],
-  ...Object.entries(services).map(([slug, [title, description]]) => [`/${slug}`, `${title} | ICRED Mali`, description, "Service"]),
-  ["/blog", "Blog ingénierie & projets au Mali | ICRED Mali", "Conseils et actualités ICRED Mali sur l'ingénierie, les études techniques et les projets d'infrastructure.", "Blog"],
-  ...Object.entries(articles).map(([slug, [title, description]]) => [`/blog/${slug}`, `${title} | ICRED Mali`, description, "Article"]),
-  ...Object.entries(projects).map(([slug, [title, description]]) => [`/projets/${slug}`, `${title} | ICRED Mali`, description, "Article"]),
+  ["/", "ICRED Mali | Bureau d'études & ingénieur conseil à Bamako", "ICRED Mali est un bureau d'études techniques et d'ingénierie conseil à Bamako : topographie, génie civil, énergie solaire, eau, routes, bâtiment et environnement.", "WebSite", assetUrl("hero-bg")],
+  ["/services", "Services d'ingénierie au Mali | ICRED Mali", "Découvrez les services d'ICRED : bureau d'études, topographie, génie civil, faisabilité, énergie et infrastructures.", "CollectionPage", assetUrl("services-hero")],
+  ...Object.entries(services).map(([slug, [title, description]]) => [`/${slug}`, `${title} | ICRED Mali`, description, "Service", assetUrl("engineer")]),
+  ["/blog", "Blog ingénierie & projets au Mali | ICRED Mali", "Conseils et actualités ICRED Mali sur l'ingénierie, les études techniques et les projets d'infrastructure.", "Blog", assetUrl("blog")],
+  ...Object.entries(articles).map(([slug, [title, description]]) => [`/blog/${slug}`, `${title} | ICRED Mali`, description, "Article", assetUrl("blog")]),
+  ...Object.entries(projects).map(([slug, [title, description]]) => [`/projets/${slug}`, `${title} | ICRED Mali`, description, "Article", assetUrl("project")]),
 ];
 
 const escape = (value) => value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -58,11 +64,11 @@ try {
   writeFileSync(templatePath, source);
 }
 
-for (const [path, title, description, type] of pages) {
+for (const [path, title, description, type, image] of pages) {
   // Static route output is a directory containing index.html. Hostinger's
   // canonical public address for such a page therefore ends with a slash.
   const url = `${baseUrl}${path === "/" ? "/" : `${path}/`}`;
-  const schema = JSON.stringify({ "@context": "https://schema.org", "@type": type, name: title.replace(" | ICRED Mali", ""), description, url, inLanguage: "fr-ML", provider: { "@id": `${baseUrl}/#organization` } });
+  const schema = JSON.stringify({ "@context": "https://schema.org", "@type": type, name: title.replace(" | ICRED Mali", ""), description, image, url, inLanguage: "fr-ML", provider: { "@id": `${baseUrl}/#organization` } });
   const fallback = `<noscript><main><nav><a href="/">Accueil</a> › <a href="/services">Services</a></nav><h1>${escape(title.replace(" | ICRED Mali", ""))}</h1><p>${escape(description)}</p><p>ICRED Mali, bureau d'études et ingénierie conseil à Bamako, accompagne les projets au Mali.</p><p><a href="/services">Découvrir nos services</a> · <a href="/blog">Lire nos conseils</a></p></main></noscript>`;
   const html = source
     .replace(/<title>[\s\S]*?<\/title>/, `<title>${escape(title)}</title>`)
@@ -71,8 +77,10 @@ for (const [path, title, description, type] of pages) {
     .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${escape(title)}" />`)
     .replace(/<meta property="og:description" content="[^"]*"\s*\/>/, `<meta property="og:description" content="${escape(description)}" />`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${url}" />`)
+    .replace(/<meta property="og:image" content="[^"]*"\s*\/>/, `<meta property="og:image" content="${image}" />`)
     .replace(/<meta name="twitter:title" content="[^"]*"\s*\/>/, `<meta name="twitter:title" content="${escape(title)}" />`)
     .replace(/<meta name="twitter:description" content="[^"]*"\s*\/>/, `<meta name="twitter:description" content="${escape(description)}" />`)
+    .replace(/<meta name="twitter:image" content="[^"]*"\s*\/>/, `<meta name="twitter:image" content="${image}" />`)
     .replace("</head>", `<script type="application/ld+json">${schema}</script></head>`)
     .replace("<body>", `<body>${fallback}`);
   const output = path === "/" ? join(distDir, "index.html") : join(distDir, path.slice(1), "index.html");

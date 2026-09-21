@@ -1,0 +1,51 @@
+OBJET : Audit SEO du site ICRED Mali
+
+Bonjour,
+
+Après analyse du site, voici les principaux points SEO identifiés.
+
+POINTS CRITIQUES A CORRIGER EN PRIORITE
+
+1. Certaines URLs inexistantes peuvent afficher une page vide ou la page d'accueil avec un statut HTTP 200, au lieu de retourner une véritable erreur 404. Cela peut créer des pages considerees comme des « soft 404 » par Google.
+
+2. Les URLs du site ne sont pas uniformes. Certaines utilisent un slash final, par exemple /services/, tandis que d'autres utilisent /services. Cette incoherence peut provoquer des redirections inutiles et une duplication potentielle des URLs.
+
+3. Les donnees structurees ne sont pas totalement coherentes entre les pages generees automatiquement et les pages chargees par React. Les URLs peuvent notamment apparaitre avec ou sans slash final.
+
+4. Les images utilisees dans les aperçus Facebook, LinkedIn et autres reseaux sociaux ne sont pas personnalisees pour chaque page. Plusieurs pages peuvent donc partager la meme image par defaut.
+
+5. Les textes alternatifs des images sont parfois absents ou trop generiques. Cela limite l'accessibilite du site et la comprehension des images par les moteurs de recherche.
+
+6. Les donnees structurees des articles et des projets sont incompletes. Il manque notamment des informations comme l'auteur, la date de publication et la date de modification.
+
+POINTS A AMELIORER
+
+1. Supprimer la balise « keywords », qui n'est plus utilisee par Google pour le referencement.
+
+2. Uniformiser les titres, descriptions et informations de l'entreprise dans toutes les pages afin d'eviter les incoherences entre la page d'accueil, les pages internes et les versions prerenderisees.
+
+3. Eviter la duplication excessive des donnees structurees JSON-LD entre le HTML initial et le contenu genere par JavaScript.
+
+4. Ajouter un fil d'Ariane structure sur les pages d'articles et de projets.
+
+5. Ajouter des dimensions precises aux images afin de reduire les decalages visuels pendant le chargement de la page.
+
+6. Ajouter une image d'apercu a la video de la page Services afin d'ameliorer l'affichage initial et les performances.
+
+7. Ajouter des dates de publication et de mise a jour aux articles du blog.
+
+8. Ameliorer le maillage interne entre les services, les projets et les articles afin de mieux distribuer la popularite SEO entre les pages.
+
+9. Verifier les performances du site, notamment le poids des images, des videos et des scripts, afin d'ameliorer les indicateurs Core Web Vitals.
+
+ORDRE DE PRIORITE RECOMMANDE
+
+1. Corriger la gestion des pages 404 et des URLs inexistantes.
+2. Uniformiser les URLs avec ou sans slash final.
+3. Corriger le systeme de prerendering et les balises sociales.
+4. Harmoniser et enrichir les donnees structurees.
+5. Optimiser les textes alternatifs et les images.
+6. Ameliorer les performances et le maillage interne.
+7. Enrichir le blog avec des dates, des auteurs et une meilleure organisation editoriale.
+
+Ces corrections permettront d'ameliorer l'indexation du site, de limiter les problemes de contenu duplique, d'optimiser l'experience utilisateur et de renforcer la visibilite d'ICRED Mali sur les moteurs de recherche.

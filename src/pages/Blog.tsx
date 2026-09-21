@@ -15,7 +15,7 @@ const Blog = () => {
         "@type": "Blog",
         name: "Blog ICRED Mali",
         description: "Conseils et actualités sur l'ingénierie, les études techniques et les projets d'infrastructure au Mali.",
-        url: "https://icred-mali.com/blog",
+        url: "https://icred-mali.com/blog/",
         inLanguage: "fr-ML",
         publisher: { "@id": "https://icred-mali.com/#organization" },
       },
@@ -23,7 +23,7 @@ const Blog = () => {
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Accueil", item: "https://icred-mali.com/" },
-          { "@type": "ListItem", position: 2, name: "Blog", item: "https://icred-mali.com/blog" },
+          { "@type": "ListItem", position: 2, name: "Blog", item: "https://icred-mali.com/blog/" },
         ],
       },
     ],
