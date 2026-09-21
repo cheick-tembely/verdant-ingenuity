@@ -59,7 +59,9 @@ try {
 }
 
 for (const [path, title, description, type] of pages) {
-  const url = `${baseUrl}${path}`;
+  // Static route output is a directory containing index.html. Hostinger's
+  // canonical public address for such a page therefore ends with a slash.
+  const url = `${baseUrl}${path === "/" ? "/" : `${path}/`}`;
   const schema = JSON.stringify({ "@context": "https://schema.org", "@type": type, name: title.replace(" | ICRED Mali", ""), description, url, inLanguage: "fr-ML", provider: { "@id": `${baseUrl}/#organization` } });
   const fallback = `<noscript><main><nav><a href="/">Accueil</a> › <a href="/services">Services</a></nav><h1>${escape(title.replace(" | ICRED Mali", ""))}</h1><p>${escape(description)}</p><p>ICRED Mali, bureau d'études et ingénierie conseil à Bamako, accompagne les projets au Mali.</p><p><a href="/services">Découvrir nos services</a> · <a href="/blog">Lire nos conseils</a></p></main></noscript>`;
   const html = source

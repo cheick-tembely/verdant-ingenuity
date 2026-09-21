@@ -1,5 +1,6 @@
-import { ArrowDown, Play } from "lucide-react";
+import { ArrowDown, MessageCircle } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 const HeroSection = () => {
   return (
@@ -29,12 +30,12 @@ const HeroSection = () => {
           <h1 className="font-bold text-primary-foreground leading-[1.2] mb-6
             text-[clamp(1.8rem,5vw,3rem)] md:text-6xl lg:text-7xl">
             
-            Ingénierie au service
+            Votre projet mérite une
             <br className="hidden sm:block" />
 
             <span className="relative inline-block mt-2 sm:mt-0">
               <span className="text-green-lime">
-                du Développement
+                étude fiable
               </span>
 
               <svg
@@ -55,32 +56,34 @@ const HeroSection = () => {
           {/* Description */}
           <p className="text-primary-foreground/80 mb-8 leading-relaxed
             text-sm sm:text-base md:text-lg lg:text-xl max-w-3xl mx-auto">
-            Notre mission, rendre accessibles les services de l'Ingénieur Conseil aux populations.
-            ICRED Mali accompagne le développement durable au Mali et en Afrique.
+            Études, énergie solaire, eau, routes et BTP : échangez avec un ingénieur ICRED pour clarifier votre besoin et préparer votre projet au Mali.
           </p>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
             
             <a
-              href="#services"
-              className="w-full sm:w-auto bg-primary-foreground text-primary px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2"
+              href={whatsappUrl("Bonjour ICRED, j'ai un projet et je souhaite échanger avec un ingénieur.\n\nType de projet : \nLocalisation : \nBesoin / état d'avancement : ")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta-attention w-full sm:w-auto bg-green-lime text-primary px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-xl hover:-translate-y-1 transition-transform"
             >
-              Découvrir nos services
-              <ArrowDown size={18} />
+              Parler de mon projet sur WhatsApp
+              <MessageCircle size={18} />
             </a>
 
             <a
-        href="#apropos"
-              className="w-full sm:w-auto border-2 border-primary-foreground/30 text-primary-foreground px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2"
+        href="#services"
+              className="w-full sm:w-auto border-2 border-primary-foreground/40 text-primary-foreground px-6 py-4 rounded-xl font-semibold flex items-center justify-center gap-2 hover:bg-primary-foreground/10 transition-colors"
             >
-              <Play size={16} className="fill-current" />
-              En savoir plus
+              Voir les expertises
+              <ArrowDown size={18} />
             </a>
           </div>
 
           {/* Badges */}
-          <div className="mt-10 flex flex-wrap justify-center gap-4 text-primary-foreground/60 text-xs sm:text-sm">
+          <p className="mt-5 text-center text-sm text-primary-foreground/70">Décrivez simplement votre besoin : ICRED vous orientera vers l'expertise adaptée.</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4 text-primary-foreground/70 text-xs sm:text-sm">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-green-lime" />
               <span>12+ ans d'expérience</span>

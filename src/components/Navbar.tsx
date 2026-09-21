@@ -99,7 +99,7 @@ const Navbar = () => {
         </ul>
 
         <a
-          href={whatsappUrl("Bonjour ICRED, je souhaite vous contacter.")}
+          href={whatsappUrl("Bonjour ICRED, j'ai un projet et je souhaite échanger avec un ingénieur.\n\nType de projet : \nLocalisation : \nBesoin : ")}
           target="_blank"
           rel="noopener noreferrer"
           className={`hidden lg:inline-flex px-6 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 ${
@@ -108,7 +108,7 @@ const Navbar = () => {
               : "bg-primary-foreground/15 text-primary-foreground border border-primary-foreground/30 hover:bg-primary-foreground/25"
           }`}
         >
-          Nous contacter
+          Parler à un ingénieur
         </a>
 
         <button
@@ -142,13 +142,13 @@ const Navbar = () => {
             ))}
             <li className="px-4 pt-2 w-full">
               <a
-                href={whatsappUrl("Bonjour ICRED, je souhaite vous contacter.")}
+                href={whatsappUrl("Bonjour ICRED, j'ai un projet et je souhaite échanger avec un ingénieur.\n\nType de projet : \nLocalisation : \nBesoin : ")}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="block text-center bg-gradient-primary text-primary-foreground px-6 py-3 rounded-lg text-sm font-semibold"
               >
-                Nous contacter
+                Parler à un ingénieur
               </a>
             </li>
           </ul>

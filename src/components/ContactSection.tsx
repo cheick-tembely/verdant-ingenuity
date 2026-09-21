@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Send, MessageCircle } from "lucide-react";
 import { FormEvent } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
@@ -12,7 +12,9 @@ const ContactSection = () => {
       "",
       `Nom : ${form.get("name")}`,
       `Email : ${form.get("email")}`,
-      `Sujet : ${form.get("subject")}`,
+      `Type de projet : ${form.get("projectType")}`,
+      `Localisation : ${form.get("location")}`,
+      `État d'avancement : ${form.get("stage")}`,
       "",
       "Message :",
       String(form.get("message")),
@@ -33,7 +35,7 @@ const ContactSection = () => {
             Prenez <span className="text-gradient">contact</span> avec nous
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Nous sommes à votre disposition pour discuter de vos projets d'ingénierie.
+            Décrivez votre besoin en deux minutes. Votre message est préparé puis envoyé directement à l'équipe ICRED sur WhatsApp.
           </p>
         </div>
 
@@ -78,7 +80,7 @@ const ContactSection = () => {
           {/* Contact form */}
           <div className={`lg:col-span-3 reveal-right ${isVisible ? "visible" : ""}`}>
             <div className="bg-card rounded-3xl p-8 border border-border shadow-sm">
-              <h3 className="text-xl font-bold text-foreground mb-6 font-serif">Envoyez-nous un message</h3>
+              <div className="mb-6"><h3 className="text-xl font-bold text-foreground font-serif">Parlez-nous de votre projet</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">Plus votre demande est précise, plus notre équipe peut vous orienter rapidement.</p></div>
               <form className="space-y-4" onSubmit={sendToWhatsApp}>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
@@ -103,14 +105,16 @@ const ContactSection = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-1.5 block">Sujet</label>
-                  <input
-                      type="text"
-                      name="subject"
+                  <label className="text-sm font-medium text-foreground mb-1.5 block">Type de projet</label>
+                  <select
+                      name="projectType"
                       required
-                    placeholder="Sujet de votre message"
                     className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
-                  />
+                  ><option value="">Sélectionnez votre besoin</option><option>Énergie solaire</option><option>Forage / eau potable</option><option>Route / infrastructure</option><option>Bâtiment / BTP</option><option>Étude technique ou de faisabilité</option><option>Étude environnementale / EIES</option><option>Autre besoin</option></select>
+                </div>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div><label className="text-sm font-medium text-foreground mb-1.5 block">Localisation du projet</label><input type="text" name="location" required placeholder="Ville, commune ou région" className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all" /></div>
+                  <div><label className="text-sm font-medium text-foreground mb-1.5 block">État du projet</label><select name="stage" required className="w-full px-4 py-3 rounded-xl border border-border bg-background text-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"><option value="">Sélectionnez une étape</option><option>Idée / besoin à préciser</option><option>Étude à lancer</option><option>Financement en recherche</option><option>Travaux à préparer ou suivre</option></select></div>
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block">Message</label>
@@ -126,9 +130,10 @@ const ContactSection = () => {
                   type="submit"
                   className="w-full bg-gradient-primary text-primary-foreground py-3.5 rounded-xl font-semibold text-sm hover:shadow-lg transition-all duration-300 flex items-center justify-center gap-2 group"
                 >
-                  Envoyer via WhatsApp
+                  Envoyer ma demande sur WhatsApp
                   <Send size={16} className="group-hover:translate-x-1 transition-transform" />
                 </button>
+                <p className="flex items-center justify-center gap-2 text-center text-xs text-muted-foreground"><MessageCircle size={14} className="text-primary" /> Votre message sera ouvert dans WhatsApp avant envoi.</p>
               </form>
             </div>
           </div>

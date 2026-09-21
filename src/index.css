@@ -178,6 +178,25 @@
   50% { box-shadow: 0 0 40px hsl(90 55% 50% / 0.4); }
 }
 
+@keyframes cta-attention {
+  0%, 100% { box-shadow: 0 8px 22px hsl(142 64% 24% / 0.22), 0 0 0 0 hsl(142 64% 24% / 0.28); }
+  50% { box-shadow: 0 10px 28px hsl(142 64% 24% / 0.3), 0 0 0 10px hsl(142 64% 24% / 0); }
+}
+
+.cta-attention {
+  animation: cta-attention 2.1s ease-in-out infinite;
+}
+
+.cta-attention-whatsapp {
+  animation-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-attention {
+    animation: none;
+  }
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }

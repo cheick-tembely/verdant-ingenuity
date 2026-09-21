@@ -13,6 +13,9 @@ export const projects = [
     image: solarHero,
     summary: "Étude de faisabilité d'une centrale solaire de 100 MWc avec 100 MW de stockage sur un site de 240 hectares.",
     role: "ICRED a réalisé les études de faisabilité nécessaires pour éclairer les choix techniques, économiques et environnementaux du projet.",
+    context: "Ce projet de centrale photovoltaïque à Gongasso, dans la région de Sikasso, nécessitait une première analyse structurée avant toute décision d'investissement. L'étude porte sur une capacité de 100 MWc, un stockage de 100 MW et un site d'environ 240 hectares.",
+    methodology: "La mission de faisabilité a permis d'examiner les hypothèses techniques du projet, les besoins liés au stockage, les contraintes du site ainsi que les enjeux à approfondir dans les étapes suivantes. L'objectif est de comparer les scénarios sur une base documentée et cohérente.",
+    value: "Le maître d'ouvrage dispose d'éléments clairs pour orienter la suite des études, apprécier les principaux risques et préparer les décisions techniques, économiques et environnementales nécessaires à un projet solaire de cette ampleur.",
     results: ["100 MWc de capacité étudiée", "100 MW de stockage considérés", "240 hectares de site étudiés"],
   },
   {
@@ -24,6 +27,9 @@ export const projects = [
     image: solarHero,
     summary: "Accompagnement en maîtrise d'ouvrage déléguée pour un système photovoltaïque à Bamako.",
     role: "ICRED a accompagné le projet en qualité de maîtrise d'ouvrage déléguée pour structurer et suivre la mise en œuvre du système photovoltaïque.",
+    context: "Implanté à Hamdallaye ACI 2000 à Bamako, ce projet concernait la mise en œuvre d'un système photovoltaïque dans un environnement urbain. Le porteur de projet avait besoin d'un interlocuteur technique capable de suivre les choix et les étapes de réalisation.",
+    methodology: "En qualité de maîtrise d'ouvrage déléguée, ICRED a accompagné la structuration du projet, le dialogue avec les intervenants et le suivi des éléments techniques nécessaires à la bonne réalisation de l'installation photovoltaïque.",
+    value: "Cet accompagnement apporte au maître d'ouvrage une lecture technique indépendante et un cadre de suivi utile pour sécuriser les décisions, coordonner les intervenants et maintenir le projet conforme à ses objectifs.",
     results: ["Projet photovoltaïque en milieu urbain", "Accompagnement de la maîtrise d'ouvrage", "Référence énergie à Bamako"],
   },
   {
@@ -35,6 +41,9 @@ export const projects = [
     image: constructionHero,
     summary: "Études techniques, environnementales et sociales du tronçon, incluant la réhabilitation de voiries.",
     role: "ICRED a contribué aux études nécessaires à la préparation de cette infrastructure routière et à la prise en compte de ses enjeux environnementaux et sociaux.",
+    context: "Le projet de bitumage Bamako–Kati en 2×2 voies porte sur une infrastructure stratégique et inclut la réhabilitation de voiries. Une telle opération doit intégrer les besoins de mobilité, les interfaces urbaines et les contraintes du milieu traversé.",
+    methodology: "ICRED a contribué aux études techniques ainsi qu'aux volets environnemental et social. Cette approche croisée permet d'articuler les exigences de conception de la route avec l'analyse des enjeux susceptibles d'influencer sa préparation et sa réalisation.",
+    value: "Les études fournissent au projet une base de préparation plus complète : les choix techniques sont documentés et les enjeux environnementaux et sociaux sont pris en compte dès l'amont, avant le démarrage des travaux.",
     results: ["Études techniques réalisées", "Volet environnemental et social", "Réhabilitation de voiries intégrée"],
   },
   {
@@ -46,6 +55,9 @@ export const projects = [
     image: planningHero,
     summary: "Projet comprenant 34 forages et 41 systèmes d'adduction d'eau solaires dans huit communes rurales.",
     role: "ICRED a apporté son expertise aux composantes d'accès à l'eau et d'adduction solaire de ce projet rural.",
+    context: "Le projet JIKURA vise l'amélioration de l'accès à l'eau dans huit communes rurales, avec 34 forages et 41 systèmes d'adduction d'eau alimentés par énergie solaire. Il associe donc enjeux hydrauliques, énergétiques et d'exploitation locale.",
+    methodology: "ICRED a mobilisé son expertise sur les composantes de forage, d'adduction et de solaire. L'analyse d'un tel système porte sur la cohérence entre la ressource, le pompage, l'énergie, le stockage et les conditions d'exploitation des ouvrages.",
+    value: "L'intervention contribue à préparer des solutions adaptées aux besoins des communes concernées et à favoriser une approche durable de l'accès à l'eau, en intégrant l'énergie solaire dans le fonctionnement des systèmes.",
     results: ["34 forages", "41 systèmes d'adduction d'eau solaires", "8 communes rurales concernées"],
   },
   {
@@ -57,6 +69,9 @@ export const projects = [
     image: blueprintsHero,
     summary: "Études hydrologiques et hydrauliques sur 65 km de piste pour le projet PDI-BS.",
     role: "ICRED a réalisé les études hydrologiques et hydrauliques permettant d'intégrer les contraintes de l'eau et du drainage au projet de piste.",
+    context: "Ce projet concerne 65 km de piste entre Dialakoroba et Kourouba, dans le cadre du projet PDI-BS. Les écoulements, franchissements et besoins de drainage doivent être compris avant de définir des solutions routières résistantes aux conditions du site.",
+    methodology: "ICRED a réalisé les études hydrologiques et hydrauliques nécessaires pour analyser les contraintes liées à l'eau. Ces études aident à identifier les points sensibles et à orienter le dimensionnement des dispositions de drainage et des ouvrages associés.",
+    value: "En intégrant ces données dès la conception, le projet dispose d'une base technique pour limiter les risques liés aux eaux de ruissellement, améliorer la pérennité de la piste et préparer une réalisation mieux adaptée au terrain.",
     results: ["65 km de piste étudiés", "Études hydrologiques", "Études hydrauliques pour PDI-BS"],
   },
 ] as const;

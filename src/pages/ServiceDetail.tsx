@@ -58,11 +58,31 @@ const serviceHeroImages: Record<string, string> = {
   "travaux-routiers-mali": constructionHero,
 };
 
+const serviceLinks = {
+  "bureau-etudes-mali": ["etudes-techniques-mali", "etude-faisabilite-mali", "ingenierie-conseil-mali"],
+  "topographie-mali": ["etudes-techniques-mali", "genie-civil-mali", "travaux-routiers-mali"],
+  "etudes-techniques-mali": ["etude-projet-mali", "topographie-mali", "etude-faisabilite-mali"],
+  "genie-civil-mali": ["etudes-techniques-mali", "topographie-mali", "travaux-routiers-mali"],
+  "etude-faisabilite-mali": ["etude-projet-mali", "etude-environnementale-mali", "ingenierie-conseil-mali"],
+  "ingenierie-conseil-mali": ["bureau-etudes-mali", "etudes-techniques-mali", "etude-faisabilite-mali"],
+  "etude-projet-mali": ["etudes-techniques-mali", "etude-faisabilite-mali", "genie-civil-mali"],
+  "entreprise-btp-mali": ["genie-civil-mali", "etudes-techniques-mali", "travaux-routiers-mali"],
+  "forage-eau-mali": ["etudes-techniques-mali", "energie-solaire-mali", "etude-environnementale-mali"],
+  "energie-solaire-mali": ["etude-faisabilite-mali", "etudes-techniques-mali", "forage-eau-mali"],
+  "etude-environnementale-mali": ["etude-faisabilite-mali", "etude-projet-mali", "travaux-routiers-mali"],
+  "travaux-routiers-mali": ["topographie-mali", "etudes-techniques-mali", "genie-civil-mali"],
+} as const;
+
 const ServiceDetail = () => {
   const { slug } = useParams();
   const service = services[slug as keyof typeof services];
   const pageUrl = `https://icred-mali.com/${slug ?? ""}`;
   const heroImage = serviceHeroImages[slug ?? ""] ?? engineerHero;
+  const relatedServices = (serviceLinks[slug as keyof typeof serviceLinks] ?? []).map((relatedSlug) => ({
+    slug: relatedSlug,
+    title: services[relatedSlug].title,
+    intro: services[relatedSlug].intro,
+  }));
   usePageSeo(
     service ? `${service.title} | ICRED Mali` : "Page introuvable | ICRED Mali",
     service?.intro ?? "Cette page n'existe pas ou a été déplacée.",
@@ -86,7 +106,8 @@ const ServiceDetail = () => {
   return <div className="min-h-screen bg-background"><Navbar /><main>
     <section className="relative isolate overflow-hidden pt-36 pb-20 px-4 text-primary-foreground"><img src={heroImage} alt="" className="absolute inset-0 -z-20 h-full w-full object-cover" /><div className="absolute inset-0 -z-10 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/55" /><div className="container mx-auto max-w-5xl"><p className="text-secondary font-semibold uppercase tracking-[.2em] text-xs mb-5">{service.eyebrow}</p><h1 className="text-4xl md:text-6xl font-bold max-w-4xl">{service.title}</h1><p className="mt-6 text-lg leading-relaxed text-primary-foreground/85 max-w-3xl">{service.intro}</p><p className="mt-7 text-sm text-primary-foreground/70 border-l-2 border-secondary pl-4">{service.keywords}</p></div></section>
     <section className="section-padding"><div className="container mx-auto max-w-5xl grid lg:grid-cols-[1fr_.7fr] gap-12"><div className="space-y-10">{service.sections.map(([heading, text]) => <article key={heading}><h2 className="text-3xl font-bold mb-4">{heading}</h2><p className="text-muted-foreground leading-8 text-lg">{text}</p></article>)}</div><aside className="rounded-2xl bg-card border border-border p-7 h-fit"><h2 className="text-2xl font-bold mb-6">Notre accompagnement</h2><ul className="space-y-4">{service.benefits.map((benefit) => <li key={benefit} className="flex gap-3 text-foreground/80"><CheckCircle2 className="shrink-0 text-primary" size={20}/>{benefit}</li>)}</ul><a href={whatsappUrl(`Bonjour ICRED, je souhaite parler de mon projet de ${service.title.toLowerCase()}.`)} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-5 py-3 rounded-lg font-semibold">Parler de votre projet <ArrowRight size={17}/></a></aside></div></section>
-    <section className="px-4 pb-20"><div className="container mx-auto max-w-5xl bg-green-pale rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-between gap-6 items-start"><div><p className="text-primary font-semibold mb-2">ICRED Mali</p><h2 className="text-3xl font-bold">Besoin d'un autre savoir-faire ?</h2></div><Link to="/services" className="inline-flex items-center gap-2 font-semibold text-primary">Voir tous nos services <ArrowRight size={17}/></Link></div></section>
+    <section className="px-4 pb-20"><div className="container mx-auto max-w-5xl"><div className="max-w-3xl mb-8"><p className="text-primary font-semibold mb-2">Expertises complémentaires</p><h2 className="text-3xl font-bold">Des services qui se complètent</h2><p className="mt-4 text-muted-foreground leading-8">Un projet solide mobilise souvent plusieurs compétences : connaissance du terrain, étude, préparation des travaux, suivi et prise en compte des impacts. Découvrez les expertises ICRED qui complètent cette prestation.</p></div><div className="grid gap-5 md:grid-cols-3">{relatedServices.map((related) => <Link key={related.slug} to={`/${related.slug}`} className="rounded-2xl border border-border bg-card p-6 transition-shadow hover:shadow-card"><h3 className="text-xl font-bold text-foreground">{related.title}</h3><p className="mt-3 text-sm leading-relaxed text-muted-foreground">{related.intro}</p><span className="mt-5 inline-flex items-center gap-2 font-semibold text-primary">Découvrir ce service <ArrowRight size={16}/></span></Link>)}</div></div></section>
+    <section className="px-4 pb-20"><div className="container mx-auto max-w-5xl bg-green-pale rounded-2xl p-8 md:p-12 flex flex-col md:flex-row justify-between gap-6 items-start"><div><p className="text-primary font-semibold mb-2">ICRED Mali</p><h2 className="text-3xl font-bold">Besoin d'un autre savoir-faire ?</h2><p className="mt-3 text-muted-foreground">Parcourez l'ensemble de nos expertises pour construire un accompagnement adapté à votre projet.</p></div><Link to="/services" className="inline-flex items-center gap-2 font-semibold text-primary">Voir tous nos services <ArrowRight size={17}/></Link></div></section>
     <section className="px-4 pb-20"><div className="container mx-auto max-w-5xl"><h2 className="text-3xl font-bold mb-7">Questions fréquentes</h2><div className="grid md:grid-cols-2 gap-5"><article className="rounded-xl border border-border bg-card p-6"><h3 className="text-xl font-bold mb-3">Pourquoi choisir ICRED ?</h3><p className="text-muted-foreground leading-relaxed">ICRED associe expertise technique, connaissance du terrain malien et écoute attentive de vos objectifs de projet.</p></article><article className="rounded-xl border border-border bg-card p-6"><h3 className="text-xl font-bold mb-3">Comment obtenir un accompagnement ?</h3><p className="text-muted-foreground leading-relaxed">Présentez-nous votre besoin par téléphone, WhatsApp ou via le formulaire de contact ; notre équipe vous orientera vers la solution adaptée.</p></article></div></div></section>
   </main><Footer /></div>;
 };

@@ -25,7 +25,11 @@ export const usePageSeo = (
   } = {},
 ) => {
   useEffect(() => {
-    const absoluteUrl = `${siteUrl}${path}`;
+    // The static pages are served by Hostinger from directories. Keep one
+    // canonical URL format everywhere: a trailing slash for every page except
+    // the home page.
+    const canonicalPath = path === "/" ? "/" : `${path.replace(/\/+$/, "")}/`;
+    const absoluteUrl = `${siteUrl}${canonicalPath}`;
     const image = options.image
       ? options.image.startsWith("http")
         ? options.image
