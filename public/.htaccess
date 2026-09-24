@@ -8,6 +8,10 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.+)$ /$1/ [R=301,L]
 
+# Serve the SEO prerendered documents explicitly. This avoids relying on the
+# host's directory fallback for the keyword landing pages.
+RewriteRule ^(assistance-maitrise-ouvrage-mali|etude-hydrologique-mali|bureau-etudes-hydraulique-mali|dossier-appel-offres-mali|controle-technique-travaux-mali|audit-energetique-mali|etude-geotechnique-mali|etude-vrd-mali|suivi-evaluation-projet-mali|etude-hydrogeologique-mali)/$ $1/index.html [L]
+
 # Let real files and generated page directories be served normally.
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
