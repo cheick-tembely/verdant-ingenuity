@@ -1,5 +1,5 @@
 import { ArrowRight, CheckCircle2, Phone } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import NotFound from "@/pages/NotFound";
@@ -10,7 +10,8 @@ import { whatsappUrl } from "@/lib/whatsapp";
 const siteUrl = "https://icred-mali.com";
 
 const KeywordPage = () => {
-  const { slug } = useParams();
+  const { pathname } = useLocation();
+  const slug = pathname.split("/").filter(Boolean)[0];
   const page = keywordPageMap[slug ?? ""];
   const pageUrl = `${siteUrl}/${page?.slug ?? slug ?? ""}/`;
   const imageUrl = page?.image?.startsWith("http") ? page.image : `${siteUrl}${page?.image ?? "/favicon.png"}`;

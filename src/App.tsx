@@ -25,20 +25,20 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/plan-du-site" element={<Sitemap />} />
+          <Route path="/plan-du-site/*" element={<Sitemap />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<ArticleDetail />} />
           <Route path="/projets/:slug" element={<ProjectDetail />} />
-          <Route path="/assistance-maitrise-ouvrage-mali" element={<KeywordPage />} />
-          <Route path="/etude-hydrologique-mali" element={<KeywordPage />} />
-          <Route path="/bureau-etudes-hydraulique-mali" element={<KeywordPage />} />
-          <Route path="/dossier-appel-offres-mali" element={<KeywordPage />} />
-          <Route path="/controle-technique-travaux-mali" element={<KeywordPage />} />
-          <Route path="/audit-energetique-mali" element={<KeywordPage />} />
-          <Route path="/etude-geotechnique-mali" element={<KeywordPage />} />
-          <Route path="/etude-vrd-mali" element={<KeywordPage />} />
-          <Route path="/suivi-evaluation-projet-mali" element={<KeywordPage />} />
-          <Route path="/etude-hydrogeologique-mali" element={<KeywordPage />} />
+          <Route path="/assistance-maitrise-ouvrage-mali/*" element={<KeywordPage />} />
+          <Route path="/etude-hydrologique-mali/*" element={<KeywordPage />} />
+          <Route path="/bureau-etudes-hydraulique-mali/*" element={<KeywordPage />} />
+          <Route path="/dossier-appel-offres-mali/*" element={<KeywordPage />} />
+          <Route path="/controle-technique-travaux-mali/*" element={<KeywordPage />} />
+          <Route path="/audit-energetique-mali/*" element={<KeywordPage />} />
+          <Route path="/etude-geotechnique-mali/*" element={<KeywordPage />} />
+          <Route path="/etude-vrd-mali/*" element={<KeywordPage />} />
+          <Route path="/suivi-evaluation-projet-mali/*" element={<KeywordPage />} />
+          <Route path="/etude-hydrogeologique-mali/*" element={<KeywordPage />} />
           <Route path="/:slug" element={<ServiceDetail />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
