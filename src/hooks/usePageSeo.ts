@@ -38,6 +38,7 @@ export const usePageSeo = (
 
     document.title = title;
     upsertMeta('meta[name="description"]', "name", "description", description);
+    upsertMeta('meta[name="keywords"]', "name", "keywords", keywords || "ICRED Mali, bureau d'études, ingénierie conseil, Mali");
     upsertMeta('meta[name="robots"]', "name", "robots", options.robots ?? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1");
     upsertMeta('meta[property="og:title"]', "property", "og:title", title);
     upsertMeta('meta[property="og:description"]', "property", "og:description", description);
