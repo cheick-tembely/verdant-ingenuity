@@ -4,6 +4,7 @@ import planningHero from "@/assets/service-heroes/planning.jpg";
 import blueprintsHero from "@/assets/service-heroes/blueprints.jpg";
 import projectHero from "@/assets/service-heroes/project.jpg";
 import solarHero from "@/assets/service-heroes/solar.jpg";
+import topographyHero from "@/assets/service-heroes/topography.jpg";
 
 export type KeywordPageData = {
   slug: string;
@@ -239,6 +240,116 @@ export const keywordPages: KeywordPageData[] = [
       { question: "L'étude couvre-t-elle aussi l'adduction d'eau ?", answer: "Elle peut être complétée par l'étude du pompage, du stockage, de l'énergie et du réseau d'adduction afin de concevoir un système cohérent." },
     ],
     relatedLinks: [{ label: "Forage d'eau au Mali", href: "/forage-eau-mali" }, { label: "Bureau d'études hydraulique au Mali", href: "/bureau-etudes-hydraulique-mali" }, { label: "Étude hydrologique au Mali", href: "/etude-hydrologique-mali" }],
+  },
+  {
+    slug: "topographie-mali",
+    eyebrow: "Mesure & terrain",
+    title: "Topographie au Mali",
+    description: "ICRED réalise des levés topographiques, nivellements et implantations au Mali pour sécuriser la conception, la préparation et le suivi des projets d'infrastructure.",
+    keywords: "topographie Mali, topographe Bamako, levé topographique Mali, relevé topographique, implantation topographique",
+    image: topographyHero,
+    serviceType: "Topographie",
+    benefits: ["Des données terrain précises et exploitable", "Une meilleure préparation des travaux", "Un suivi fiable des niveaux et implantations"],
+    sections: [
+      { heading: "La précision comme point de départ", paragraphs: ["Un projet bien conçu repose d’abord sur une bonne connaissance du terrain. Les levés topographiques permettent de cartographier le relief, les niveaux, les limites, les accès et les points de repère utiles à la conception et à la mise en œuvre.", "Au Mali, les réalités de terrain, le climat, les accès et les types de sols influencent directement la qualité des mesures et la nature des recommandations à adopter."] },
+      { heading: "Des relevés utiles à chaque phase du projet", paragraphs: ["ICRED réalise des plans de situation, courbes de niveau, profils en long et en travers, relevés de points et implantations destinés à la conception, au chiffrage et au suivi des travaux. Ces documents servent aux architectes, bureaux d’études, entreprises et maîtres d’ouvrage.", "Une base topographique fiable limite les erreurs de conception, les surprises de chantier et les écarts de quantité."] },
+      { heading: "Implantation et contrôle sur chantier", paragraphs: ["La mission ne s’arrête pas au levé initial. Nous pouvons également implanter les points, axes, niveaux et ouvrages prévus, puis vérifier leur positionnement pendant l’exécution. Cette étape renforce la cohérence entre le projet et le terrain.", "Le contrôle topographique aide à sécuriser la conformité, la qualité des ouvrages et la gestion des livrables de chantier."] },
+      { heading: "Un appui pour la route, le bâtiment, l’eau et les aménagements", paragraphs: ["Les résultats topographiques sont utiles à tous les types de projet : lotissements, routes, réseaux, bâtiments, ouvrages hydrauliques, baux de gestion, aménagements urbains et infrastructures. La précision de l’information devient le socle de décisions plus sûres.", "ICRED articule la topographie avec les études techniques, géotechniques et hydrologiques pour offrir une lecture cohérente du site."] },
+    ],
+    faqs: [
+      { question: "Que fait un topographe au Mali ?", answer: "Il réalise les relevés de terrain, métrologie, implantation d'ouvrages, nivellement et contrôle de conformité sur le chantier." },
+      { question: "Pourquoi une étude topographique est-elle essentielle avant les travaux ?", answer: "Elle permet de connaître les niveaux, les pentes, les limites du terrain et les points d'implantation, afin d'éviter les erreurs de conception et de construction." },
+      { question: "La topographie est-elle utile pour un petit projet ?", answer: "Oui. Même un projet modesté gagne à être préparé sur une base terrain fiable, car cela réduit les coûts de reprise et améliore la qualité de la mise en œuvre." },
+    ],
+    relatedLinks: [{ label: "Études techniques au Mali", href: "/etudes-techniques-mali" }, { label: "Étude géotechnique au Mali", href: "/etude-geotechnique-mali" }, { label: "Travaux routiers au Mali", href: "/travaux-routiers-mali" }],
+  },
+  {
+    slug: "etude-environnementale-mali",
+    eyebrow: "Environnement & conformité",
+    title: "Étude environnementale au Mali",
+    description: "ICRED aide les maîtres d’ouvrage à identifier les impacts environnementaux et sociaux d’un projet afin de mieux les prévenir, les gérer et les documenter.",
+    keywords: "étude environnementale Mali, EIES Mali, impact environnemental Mali, étude d'impact social Mali, cabinet environnement Mali",
+    image: engineerHero,
+    serviceType: "Étude environnementale",
+    benefits: ["Identification des impacts environnementaux et sociaux", "Mesures de prévention et de gestion", "Dossiers plus lisibles pour les décisions et autorisations"],
+    sections: [
+      { heading: "Préparer les projets avec une lecture du milieu", paragraphs: ["Les projets d’aménagement, d’infrastructure et de construction peuvent modifier les usages du sol, les écoulements, les ressources naturelles ou les conditions de vie locales. Une étude environnementale sert à identifier ces effets et à proposer des mesures adaptées avant la mise en œuvre.", "Au Mali, cette démarche est essentielle pour mieux composer avec les contraintes du site, les populations concernées et les exigences de développement durable."] },
+      { heading: "Évaluer les effets du projet", paragraphs: ["ICRED analyse les caractéristiques du site, le contexte socio-économique, les ressources concernées, les risques et les mesures de prévention. Selon le projet, les investigations peuvent intégrer les eaux, les sols, la faune, la flore, le paysage, les nuisances, le bruit et les déplacements.", "Cette analyse permet de distinguer les impacts négatifs, les mesures à intégrer dès la conception et les éléments à suivre pendant la phase d’exécution."] },
+      { heading: "Mettre en place des mesures de gestion", paragraphs: ["Les recommandations peuvent porter sur la gestion des déchets, les protections des zones sensibles, les mesures de drainage, le suivi des nuisances, la sensibilisation des acteurs ou la prise en compte des impacts sociaux. Cette étape aide à transformer un diagnostic en plan d’action exploitable.", "Les mesures sont adaptées au niveau de risque, au contexte d’exploitation et à la capacité de mise en œuvre du projet."] },
+      { heading: "Un soutien aux décisions de projet", paragraphs: ["Une bonne étude environnementale donne au porteur de projet une base solide pour la décision, la communication et la gestion des risques. Elle facilite aussi le dialogue avec les parties prenantes et la préparation des autorisations ou obligations de suivi.", "ICRED articule cette analyse avec les études de faisabilité, le projet technique et les phases de mise en œuvre."] },
+    ],
+    faqs: [
+      { question: "Quand faut-il réaliser une étude environnementale ?", answer: "Dès la phase de préparation du projet, afin d’intégrer les mesures de prévention à la conception et éviter des coûts ou des retards imprévus." },
+      { question: "Une étude environnementale est-elle obligatoire pour tous les projets ?", answer: "Le niveau de détail et le besoin de procédure varient selon la nature du projet, son emplacement et les exigences applicables. Elle est souvent recommandée ou exigée pour les aménagements et infrastructures de taille significative." },
+      { question: "Qu’est-ce qui distingue l’EIES d’un simple diagnostic ?", answer: "L’EIES établit une analyse plus complète des impacts, de leurs causes, de leur amplitude et des mesures de réduction, de compensation et de suivi associées." },
+    ],
+    relatedLinks: [{ label: "Étude de faisabilité au Mali", href: "/etude-faisabilite-mali" }, { label: "Étude de projet au Mali", href: "/etude-projet-mali" }, { label: "Suivi-évaluation de projet au Mali", href: "/suivi-evaluation-projet-mali" }],
+  },
+  {
+    slug: "etude-faisabilite-mali",
+    eyebrow: "Décision & stratégie",
+    title: "Étude de faisabilité au Mali",
+    description: "ICRED aide les décideurs à valider la pertinence, les coûts, les risques et les options techniques avant de lancer un investissement ou un projet d'infrastructure.",
+    keywords: "étude de faisabilité Mali, étude de faisabilité projet, faisabilité technique Mali, étude de projet Banque, conseil technique Mali",
+    image: planningHero,
+    serviceType: "Étude de faisabilité",
+    benefits: ["Une évaluation des options techniques et économiques", "Une meilleure maîtrise des risques", "Un socle pour la décision et le financement"],
+    sections: [
+      { heading: "Sécuriser un investissement dès l’amont", paragraphs: ["Avant d’engager des moyens importants, il est utile de vérifier si le projet répond à un besoin réel, s’il est compatible avec le terrain et s’il peut être mis en œuvre de manière réaliste. Une étude de faisabilité permet d’analyser le contexte, les contraintes, les usages et la valeur du projet.", "Cette étape aide à éviter les mauvais arbitrages, les coûts imprévus et les retards liés à une préparation insuffisante."] },
+      { heading: "Comparer les scénarios techniques", paragraphs: ["ICRED étudie les variantes de solution, les coûts prévisionnels, les délais, les besoins de maintenance et les contraintes d’exploitation. L’analyse met en lumière la solution la plus adaptée au contexte, au budget et aux objectifs du maître d’ouvrage.", "Les recommandations sont formulées avec les hypothèses, les limites et les principaux risques, afin de permettre une prise de décision rigoureuse."] },
+      { heading: "Préparer le financement et la suite du projet", paragraphs: ["Une bonne étude de faisabilité fournit les éléments utiles pour rassurer les financeurs, les décideurs ou les partenaires techniques. Elle peut aussi clarifier la suite du parcours : étude détaillée, consultation, conception, exécution et suivi.", "L’objectif est de proposer un plan de progression réaliste, clair et documenté."] },
+      { heading: "Un support pour poursuivre sereinement", paragraphs: ["Le livrable peut inclure un résumé des contraintes, les scénarios comparés, les points de vigilance et une feuille de route. Cette base permet de poursuivre le projet avec une meilleure visibilité, plus de confiance et moins de risques.", "ICRED poursuit ensuite éventuellement avec l’étude de projet, le dossier de consultation ou l’assistance au maître d’ouvrage."] },
+    ],
+    faqs: [
+      { question: "À quel stade faut-il faire une étude de faisabilité ?", answer: "Dès qu’une idée de projet doit être évaluée avant d’engager des études détaillées, un investissement ou une consultation importante." },
+      { question: "Qu’inclut une étude de faisabilité ?", answer: "Elle inclut généralement l’analyse du besoin, le contexte, les options techniques, l’estimation des coûts, les principaux risques et les recommandations de décision." },
+      { question: "Une étude de faisabilité remplace-t-elle l’étude de projet ?", answer: "Non. Elle aide à choisir la voie à suivre, tandis que l’étude de projet approfondit ensuite la conception et la préparation de la mise en œuvre." },
+    ],
+    relatedLinks: [{ label: "Étude de projet au Mali", href: "/etude-projet-mali" }, { label: "Assistance à maîtrise d’ouvrage", href: "/assistance-maitrise-ouvrage-mali" }, { label: "Ingénierie conseil au Mali", href: "/ingenierie-conseil-mali" }],
+  },
+  {
+    slug: "forage-eau-mali",
+    eyebrow: "Eau & hydraulique",
+    title: "Forage d’eau au Mali",
+    description: "ICRED accompagne les projets de forage d’eau au Mali avec les études techniques, la préparation du projet et l’orientation des travaux vers une ressource durable et exploitable.",
+    keywords: "forage eau Mali, étude forage Mali, forage d'eau Bamako, projet de forage au Mali, eau souterraine Mali",
+    image: planningHero,
+    serviceType: "Forage d’eau",
+    benefits: ["Une meilleure compréhension de la ressource", "Une préparation technique plus solide", "Un projet plus fiable avant la commande de travaux"],
+    sections: [
+      { heading: "Préparer un forage d’eau avec méthode", paragraphs: ["Un projet de forage d’eau au Mali doit intégrer le besoin, le site, la ressource, les conditions de pompage et la manière dont l’eau sera utilisée. Une bonne préparation permet de mieux choisir l’implantation, le type d’ouvrage et la stratégie d’exploitation.", "ICRED apporte une lecture technique permettant d’évaluer les hypothèses, les risques et les étapes nécessaires vers l’exécution." ] },
+      { heading: "Relier ressource, aquifère et système", paragraphs: ["Le succès d’un forage dépend de la qualité de l’analyse hydrogéologique, des conditions de terrain et de la manière dont l’eau est ensuite mobilisée. Il faut tenir compte du débit attendu, de la profondeur, des équipements de pompage, du stockage et des réseaux d’adduction.", "Une conception cohérente évite les surcoûts, les défaillances de service et une exploitation difficile à maintenir."] },
+      { heading: "Adapter la solution aux besoins locaux", paragraphs: ["Les besoins peuvent concerner une collectivité, une entreprise, un site agricole, un établissement ou une zone urbaine. Le projet doit donc être pensé selon les volumes, les horaires de consommation, les coûts d’exploitation et la durabilité de la ressource.", "Les recommandations peuvent être complétées par l’étude hydraulique, l’étude environnementale ou la préparation du dossier de consultation."] },
+      { heading: "Un accompagnement utile avant l’exécution", paragraphs: ["Le forage est une étape déterminante, mais il ne doit pas être traité isolément. Une étude préalable et une bonne préparation de travaux permettent de mieux organiser les acteurs, les coûts, le calendrier et le contrôle de qualité.", "C’est cette approche qui aide à passer d’une simple idée à un point d’eau durablement exploitable."] },
+    ],
+    faqs: [
+      { question: "Quelles informations sont utiles avant un projet de forage ?", answer: "Le besoin en eau, le contexte géologique, les données de terrain, le nombre d’usagers, les besoins de débit et les contraintes de mise en œuvre sont autant d’éléments à préciser." },
+      { question: "Une étude de forage est-elle indispensable ?", answer: "Elle est fortement recommandée car elle réduit les risques d’échec, de mauvais dimensionnement ou de surcoût avant l’appel d’offres et la réalisation." },
+      { question: "Un forage est-il compatible avec l’adduction d’eau ?", answer: "Oui, à condition de bien intégrer le point d’eau, le pompage, le stockage, la distribution et les besoins des usagers dans la conception du système." },
+    ],
+    relatedLinks: [{ label: "Étude hydrogéologique au Mali", href: "/etude-hydrogeologique-mali" }, { label: "Bureau d’études hydraulique au Mali", href: "/bureau-etudes-hydraulique-mali" }, { label: "Étude de projet au Mali", href: "/etude-projet-mali" }],
+  },
+  {
+    slug: "energie-solaire-mali",
+    eyebrow: "Énergie & photovoltaïque",
+    title: "Énergie solaire au Mali",
+    description: "ICRED accompagne les projets d’énergie solaire au Mali avec des études de faisabilité, un dimensionnement réaliste et un accompagnement technique adapté au contexte local.",
+    keywords: "énergie solaire Mali, installation solaire Bamako, panneaux solaires Mali, photovoltaïque Mali, étude solaire Mali",
+    image: solarHero,
+    serviceType: "Énergie solaire",
+    benefits: ["Une évaluation du besoin et du potentiel solaire", "Des solutions adaptées au contexte local", "Un meilleur dimensionnement des installations"],
+    sections: [
+      { heading: "Faire du solaire un levier de performance", paragraphs: ["L’énergie solaire est une solution attractive pour réduire la dépendance aux générateurs, limiter les coûts d’exploitation et sécuriser l’alimentation en sites isolés ou soumis à des coupures fréquentes. Mais son efficacité dépend d’un bon diagnostic du besoin et du site.", "ICRED aide les maîtres d’ouvrage à évaluer les usages, la consommation, le potentiel solaire, les contraintes d’intégration et les options de stockage ou d’hybridation."] },
+      { heading: "Étudier le bon dimensionnement", paragraphs: ["La qualité du dimensionnement est déterminante pour la performance et la durabilité d’une installation photovoltaïque. Il faut tenir compte de la consommation, de la température, des ombrages, des équipements à alimenter et des conditions de maintenance.", "L’étude permet d’éviter le surdimensionnement inutile ou le sous-dimensionnement qui condamne le système à des performances insuffisantes."] },
+      { heading: "Adapter les solutions à l’usage réel", paragraphs: ["Selon le projet, la réponse peut être une installation dédiée, une solution hybride, un système de pompage solaire ou un équipement pour un bâtiment ou une entreprise. Chaque scénario est évalué selon ses coûts, ses contraintes d’exploitation, son niveau de fiabilité et son retour sur investissement.", "ICRED relie l’analyse énergétique à la faisabilité technique et à la nature de l’activité concernée."] },
+      { heading: "Un accompagnement utile avant la commande", paragraphs: ["Avant d’acheter les équipements, il est important de clarifier la demande, les objectifs de performance, le budget et les hypothèses de fonctionnement. Cette étape réduit les erreurs de choix et facilite la consultation des fournisseurs et installateurs.", "L’étude solaire peut être prolongée par le suivi des travaux et le contrôle de conformité de l’installation."] },
+    ],
+    faqs: [
+      { question: "L’énergie solaire est-elle adaptée au Mali ?", answer: "Oui, le potentiel solaire est favorable dans de nombreuses zones, mais le bon dimensionnement et le choix de solution restent essentiels selon le contexte et les usages." },
+      { question: "Faut-il une étude avant d’installer des panneaux solaires ?", answer: "Oui. Elle permet de vérifier le besoin, le potentiel de production, les caractéristiques du site et le bon niveau de dimensionnement pour éviter des erreurs coûteuses." },
+      { question: "Peut-on associer solaire et groupe électrogène ?", answer: "Oui, des solutions hybrides peuvent être pertinentes pour sécuriser l’alimentation selon le profil de consommation, la criticité des charges et le budget disponible." },
+    ],
+    relatedLinks: [{ label: "Audit énergétique au Mali", href: "/audit-energetique-mali" }, { label: "Étude de faisabilité au Mali", href: "/etude-faisabilite-mali" }, { label: "Assistance à maîtrise d’ouvrage", href: "/assistance-maitrise-ouvrage-mali" }],
   },
 ];
 
