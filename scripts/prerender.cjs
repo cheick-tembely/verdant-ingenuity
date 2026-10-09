@@ -55,6 +55,10 @@ const keywordPages = {
   "etude-vrd-mali": ["Étude VRD au Mali | ICRED Mali", "ICRED réalise des études VRD au Mali pour concevoir les voiries et réseaux divers d'un lotissement, d'un site industriel ou d'un aménagement urbain.", "Service", "blueprints"],
   "suivi-evaluation-projet-mali": ["Suivi-évaluation de projet au Mali | ICRED Mali", "ICRED accompagne le suivi-évaluation des projets au Mali pour mesurer les résultats, documenter les progrès et améliorer les décisions des organisations et partenaires.", "Service", "engineer"],
   "etude-hydrogeologique-mali": ["Étude hydrogéologique au Mali | ICRED Mali", "ICRED accompagne les études hydrogéologiques au Mali pour mieux caractériser les ressources souterraines et préparer des projets de forage et d'adduction d'eau durables.", "Service", "planning"],
+  "etude-assainissement-mali": ["Étude d’assainissement au Mali | ICRED Mali", "ICRED accompagne les études d’assainissement au Mali pour concevoir des solutions adaptées de collecte, d’évacuation et de traitement des eaux usées et pluviales.", "Service", "blueprints"],
+  "etude-irrigation-agricole-mali": ["Étude d’irrigation agricole au Mali | ICRED Mali", "ICRED étudie les projets d’irrigation agricole au Mali pour mettre en adéquation les besoins des cultures, la ressource en eau, les équipements et les conditions d’exploitation.", "Service", "planning"],
+  "etude-structures-fondations-mali": ["Étude de structures et fondations au Mali | ICRED Mali", "ICRED réalise des études de structures et de fondations au Mali pour dimensionner les ouvrages en fonction de leur usage, des charges et des caractéristiques du sol.", "Service", "construction"],
+  "conception-dalles-mali": ["Conception de dalles au Mali | ICRED Mali", "ICRED conçoit et dimensionne des dalles au Mali en fonction de leur portée, de leur usage, des charges prévues et de leur intégration dans la structure du bâtiment.", "Service", "blueprints"],
 };
 
 const pages = [

@@ -19,6 +19,10 @@ const services = [
   ["Énergie solaire", "/energie-solaire-mali"],
   ["Étude environnementale & EIES", "/etude-environnementale-mali"],
   ["Travaux routiers & infrastructures", "/travaux-routiers-mali"],
+  ["Étude d’assainissement au Mali", "/etude-assainissement-mali"],
+  ["Étude d’irrigation agricole au Mali", "/etude-irrigation-agricole-mali"],
+  ["Étude de structures et fondations au Mali", "/etude-structures-fondations-mali"],
+  ["Conception de dalles au Mali", "/conception-dalles-mali"],
 ] as const;
 
 const Sitemap = () => {

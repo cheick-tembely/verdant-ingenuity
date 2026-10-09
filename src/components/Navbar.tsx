@@ -28,6 +28,10 @@ const serviceLinks = [
   { label: "Énergie solaire", href: "/energie-solaire-mali" },
   { label: "Étude environnementale", href: "/etude-environnementale-mali" },
   { label: "Travaux routiers", href: "/travaux-routiers-mali" },
+  { label: "Étude d’assainissement", href: "/etude-assainissement-mali" },
+  { label: "Étude d’irrigation agricole", href: "/etude-irrigation-agricole-mali" },
+  { label: "Structures & fondations", href: "/etude-structures-fondations-mali" },
+  { label: "Conception de dalles", href: "/conception-dalles-mali" },
 ];
 
 const projectLinks = [

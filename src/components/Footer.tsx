@@ -49,6 +49,10 @@ const Footer = () => {
               <li><a href="/energie-solaire-mali" className="hover:text-primary-foreground transition-colors">Énergie solaire</a></li>
               <li><a href="/etude-environnementale-mali" className="hover:text-primary-foreground transition-colors">Étude environnementale</a></li>
               <li><a href="/travaux-routiers-mali" className="hover:text-primary-foreground transition-colors">Travaux routiers</a></li>
+              <li><a href="/etude-assainissement-mali" className="hover:text-primary-foreground transition-colors">Étude d’assainissement au Mali</a></li>
+              <li><a href="/etude-irrigation-agricole-mali" className="hover:text-primary-foreground transition-colors">Étude d’irrigation agricole au Mali</a></li>
+              <li><a href="/etude-structures-fondations-mali" className="hover:text-primary-foreground transition-colors">Structures et fondations au Mali</a></li>
+              <li><a href="/conception-dalles-mali" className="hover:text-primary-foreground transition-colors">Conception de dalles au Mali</a></li>
             </ul>
           </div>
           

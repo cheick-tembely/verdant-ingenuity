@@ -18,6 +18,10 @@ const highlightedServices = [
   { title: "Énergie solaire", text: "Études et solutions photovoltaïques adaptées aux besoins locaux.", to: "/energie-solaire-mali", icon: SearchCheck },
   { title: "Étude environnementale", text: "Études d'impact et accompagnement environnemental des projets.", to: "/etude-environnementale-mali", icon: ClipboardCheck },
   { title: "Travaux routiers", text: "Études et suivi des routes, pistes rurales et ouvrages d'art.", to: "/travaux-routiers-mali", icon: Map },
+  { title: "Étude d’assainissement au Mali", text: "Des solutions adaptées pour les eaux usées, le drainage et la gestion des eaux pluviales.", to: "/etude-assainissement-mali", icon: ClipboardCheck },
+  { title: "Étude d’irrigation agricole au Mali", text: "La conception de réseaux et équipements d’irrigation adaptés aux cultures et aux ressources.", to: "/etude-irrigation-agricole-mali", icon: Map },
+  { title: "Structures et fondations au Mali", text: "Des études de structure coordonnées avec les caractéristiques du sol et les besoins du projet.", to: "/etude-structures-fondations-mali", icon: Building2 },
+  { title: "Conception de dalles au Mali", text: "Le dimensionnement des dalles et planchers selon les portées et les charges prévues.", to: "/conception-dalles-mali", icon: Ruler },
 ];
 
 const otherServices = ["Énergie solaire & hybridation", "Eau & assainissement", "Bâtiment & construction", "Aménagement urbain", "Routes & infrastructures", "Hydro-agricole", "Environnement", "Suivi-évaluation", "Implantation géophysique", "Recherche & développement"];
